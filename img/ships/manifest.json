@@ -5,7 +5,7 @@
  },
  "dd09": {
   "title": "吹雪",
-  "img": "dd09.jpg"
+  "img": "dd09.png"
  },
  "cl08": {
   "title": "夕張 (軽巡洋艦)",
@@ -62,10 +62,6 @@
  "ss04": {
   "title": "伊号第五十八潜水艦",
   "img": "ss04.jpg"
- },
- "ss02": {
-  "title": "伊号第四百一潜水艦",
-  "img": "ss02.jpg"
  },
  "ss01": {
   "title": "伊号第四百潜水艦",
@@ -157,7 +153,7 @@
  },
  "bb07": {
   "title": "扶桑",
-  "img": "bb07.png"
+  "img": "bb07.jpg"
  },
  "bb05": {
   "title": "榛名 (戦艦)",
@@ -201,7 +197,7 @@
  },
  "dd08": {
   "title": "綾波 (吹雪型駆逐艦)",
-  "img": "dd08.png"
+  "img": "dd08.jpg"
  },
  "dd12": {
   "title": "白露 (白露型駆逐艦)",
@@ -238,5 +234,10 @@
  "cv09": {
   "title": "大鳳 (空母)",
   "img": "cv09.jpg"
+ },
+ "ss02": {
+  "title": "伊号第四百一潜水艦",
+  "img": "ss02.jpg",
+  "src": "japanese-warship.com"
  }
 }

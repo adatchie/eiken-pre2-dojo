@@ -421,7 +421,7 @@
       <div class="ship-modal-name">${escapeHtml(ship.name)}${isRare ? " <span class='rare-tag'>レア</span>" : ""}</div>
       <div class="ship-modal-type">${escapeHtml(ship.type)}</div>
       <div class="ship-modal-desc">${escapeHtml(ship.note)}</div>` +
-      (SHIP_MANIFEST[id] ? `<div class="ship-modal-src">画像: Wikipedia</div>` : "")
+      (SHIP_MANIFEST[id] ? `<div class="ship-modal-src">画像: ${escapeHtml(SHIP_MANIFEST[id].src || "Wikipedia")}</div>` : "")
     );
   }
   function openCards() {
