@@ -118,22 +118,28 @@
     $("q-kind").innerHTML = escapeHtml(it.kind === "idiom" ? `熟語 ${it.tier ? "【でる度" + it.tier + "】" : ""}` : "単語") +
       ` <span class="lv-badge lv${lv}">${LV_NAMES[lv]}</span>`;
     $("q-meaning").textContent = it.ja;
-    // Lv1書き写し: 正解をそのまま表示
+    // 例文: Lv1は熟語部分をハイライトして表示（使い方を先に意識させる）
+    //      Lv2/3は空所化（活用形でも正しく空所にする）
+    const exEl = $("q-example");
+    if (it.kind === "idiom" && it.ex) {
+      exEl.innerHTML = lv === 1 ? highlightExample(it) : blankExample(it);
+      exEl.classList.toggle("emph", lv === 1);
+    } else {
+      exEl.textContent = "";
+      exEl.classList.remove("emph");
+    }
+    // Lv1書き写し: 辞書形（基本表現）を表示して書き写す
     const tr = $("q-transcript");
     if (lv === 1) {
-      tr.textContent = U.expandVariants(it.en)[0];
+      tr.innerHTML = `<span class="tr-label">辞書形</span>${escapeHtml(U.expandVariants(it.en)[0])}`;
       tr.style.display = "";
     } else {
-      tr.textContent = "";
+      tr.innerHTML = "";
       tr.style.display = "none";
     }
-    // 例文: 熟語は空所化
-    if (it.kind === "idiom" && it.ex) {
-      $("q-example").innerHTML = blankExample(it);
-    } else {
-      $("q-example").textContent = "";
-    }
     $("q-hint").textContent = hintFor(it, lv);
+    // Lv1熟語は「例文→辞書形」の視覚順序に切り替え
+    $("question-card").classList.toggle("lv1-idiom", lv === 1 && it.kind === "idiom" && !!it.ex);
     $("feedback").textContent = "";
     $("feedback").className = "feedback";
     const inp = $("answer-input");
@@ -145,24 +151,42 @@
     setTimeout(() => inp.focus(), 50);
   }
 
+  // 例文中の熟語相当部分（活用形を含む）をトークン位置つきで特定する
+  function exampleTokens(it) {
+    const toks = it.ex.trim().split(/\s+/);
+    const hit = U.findInText(it.en, it.ex);
+    return { toks, hit };
+  }
+
+  // Lv2/3用: 熟語部分を空欄化（活用形 went out なども正しく空所にする）
   function blankExample(it) {
-    // 例文から熟語本体(バリアント)を探して空欄化
-    const variants = U.expandVariants(it.en).sort((a, b) => b.length - a.length);
-    let html = escapeHtml(it.ex);
-    for (const v of variants) {
-      const re = new RegExp("\\b" + escapeRegExp(v).replace(/\s+/g, "\\s+") + "\\b", "i");
-      if (re.test(it.ex)) {
-        html = escapeHtml(it.ex).replace(re, '<span class="blank">＿＿＿</span>');
-        break;
-      }
-    }
-    return html;
+    const { toks, hit } = exampleTokens(it);
+    if (!hit) return escapeHtml(it.ex);
+    const parts = [];
+    if (hit.start > 0) parts.push(escapeHtml(toks.slice(0, hit.start).join(" ")));
+    parts.push('<span class="blank">＿＿＿</span>');
+    if (hit.start + hit.len < toks.length) parts.push(escapeHtml(toks.slice(hit.start + hit.len).join(" ")));
+    return parts.join(" ");
+  }
+
+  // Lv1用: 熟語部分をハイライト（例文の中の使われ方をそのまま見せる）
+  function highlightExample(it) {
+    const { toks, hit } = exampleTokens(it);
+    if (!hit) return escapeHtml(it.ex);
+    const parts = [];
+    if (hit.start > 0) parts.push(escapeHtml(toks.slice(0, hit.start).join(" ")));
+    parts.push(`<span class="hl">${escapeHtml(toks.slice(hit.start, hit.start + hit.len).join(" "))}</span>`);
+    if (hit.start + hit.len < toks.length) parts.push(escapeHtml(toks.slice(hit.start + hit.len).join(" ")));
+    return parts.join(" ");
   }
 
   function hintFor(it, lv) {
     const n = U.normalize(U.expandVariants(it.en)[0]);
     const words = n.split(" ");
-    if (lv === 1) return "上の英語をそのまま入力しよう！";
+    if (lv === 1) {
+      if (it.kind === "idiom" && it.ex) return "例文を先に読んでから、下の辞書形をそのまま入力しよう！";
+      return "上の英語をそのまま入力しよう！";
+    }
     if (lv === 2) {
       // 各単語の頭文字だけ表示
       const masked = words.map((w) => w[0] + "_".repeat(Math.max(0, w.length - 1))).join(" ");
@@ -251,7 +275,14 @@
       fb.className = "feedback ok";
     } else {
       combo = 0;
-      fb.innerHTML = `❌ 正解: <b>${escapeHtml(it.en)}</b><br><span style="font-size:.85rem;color:#64748b">この問題は正解するまで出続けます</span>`;
+      // 例文の活用形をそのまま入力した場合（went out など）は専用フィードバックで教える
+      const hit = it.kind === "idiom" && it.ex ? U.findInText(it.en, it.ex) : null;
+      const typedInflected = hit && !hit.exact && U.normalize(val) === U.normalize(hit.span);
+      if (typedInflected) {
+        fb.innerHTML = `❌ 「${escapeHtml(hit.span)}」は例文の中で使われている形です。<br>ここでは辞書形 <b>${escapeHtml(it.en)}</b> を入力しよう！<br><span style="font-size:.85rem;color:#64748b">この問題は正解するまで出続けます</span>`;
+      } else {
+        fb.innerHTML = `❌ 正解: <b>${escapeHtml(it.en)}</b><br><span style="font-size:.85rem;color:#64748b">この問題は正解するまで出続けます</span>`;
+      }
       fb.className = "feedback ng";
     }
     Rewards.flush(profile);

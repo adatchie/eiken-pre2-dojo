@@ -77,6 +77,14 @@ h2 { font-size: 1.4rem; text-align: center; margin: 16px 0; }
   padding: 20px 16px; margin-bottom: 14px;
   box-shadow: 0 2px 8px rgba(0,0,0,.1);
 }
+/* Lv1熟語: 例文（ハイライト）→辞書形 の順に見せる */
+.question-card.lv1-idiom { display: flex; flex-direction: column; }
+.question-card.lv1-idiom .q-example { order: 3; }
+.question-card.lv1-idiom .q-transcript { order: 4; margin-top: 4px; }
+.question-card.lv1-idiom .q-hint { order: 5; }
+.q-example.emph { font-size: 1.05rem; color: var(--ink); background: #fffbeb; border-radius: 8px; padding: 10px 12px; margin-bottom: 8px; }
+.q-example .hl { color: #b45309; font-weight: 800; background: #fde68a; border-radius: 4px; padding: 1px 4px; }
+.tr-label { display: inline-block; font-size: .65rem; font-weight: 700; color: #fff; background: #3b82f6; border-radius: 4px; padding: 1px 6px; margin-right: 8px; vertical-align: middle; }
 .q-kind { display: inline-block; font-size: .75rem; font-weight: 700; background: #dbeafe; color: var(--primary); padding: 3px 10px; border-radius: 999px; margin-bottom: 10px; }
 .q-meaning { font-size: 1.35rem; font-weight: 800; line-height: 1.5; margin-bottom: 10px; }
 .q-example { font-size: .95rem; color: var(--muted); line-height: 1.6; }

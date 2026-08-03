@@ -58,6 +58,23 @@ check("matchAnswer 所有格統一 (my→one's)", U.matchAnswer("make up my mind
 check("matchAnswer 誤答拒否", !U.matchAnswer("in cases", t1));
 check("matchAnswer 空文字拒否", !U.matchAnswer("   ", t1));
 
+// --- findInText: 例文中の熟語検出（活用形対応） ---
+const f1 = U.findInText("go out", "We went out for dinner last night.");
+check("findInText 活用形検出 (went out)", f1 && !f1.exact && f1.span === "went out");
+check("findInText 対応 go→went", f1 && f1.diffs[0].dict === "go" && f1.diffs[0].ex === "went");
+const f2 = U.findInText("go over", "Let's go over the plan again.");
+check("findInText 原形一致", f2 && f2.exact && f2.span === "go over");
+const f3 = U.findInText("come across", "I came across an old photo.");
+check("findInText came across 検出", f3 && !f3.exact && f3.span === "came across");
+const f4 = U.findInText("take A for granted", "Don't take your family for granted.");
+check("findInText A/Bプレースホルダー系は検出不能(null)", f4 === null);
+const f5 = U.findInText("go out", "She is outgoing.");
+check("findInText 部分一致の誤検出なし (outgoing)", f5 === null);
+const f6 = U.findInText("(just) in case", "Take an umbrella just in case.");
+check("findInText バリアント対応 (just in case)", f6 && f6.exact && f6.span === "just in case");
+check("matchAnswer went out は拒否（辞書形のみ受理）", !U.matchAnswer("went out", { en: "go out" }));
+check("matchAnswer go out は受理", U.matchAnswer("go out", { en: "go out" }));
+
 // 日付seededShuffleの再現性
 const arr = [1,2,3,4,5,6,7,8,9,10];
 const s1 = U.seededShuffle(arr, "2026-08-03");

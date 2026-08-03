@@ -97,8 +97,36 @@ const U = (() => {
     return n.length > 0 && acceptedSet(item).has(n);
   }
 
+  // 例文の中で熟語に相当する語列を探す（バリアントすべてを試す）。
+  // 戻り値: { start, len, span: "went out", diffs: [{idx,dict,ex}], exact: bool } | null
+  //  - exact=true: 例文中に辞書形そのまま
+  //  - exact=false: 1語だけ活用形（went out / comes from など）→ diffsにその対応
+  //  - null: 検出不能（A/Bプレースホルダー系・複数語活用）
+  function findInText(en, ex) {
+    if (!ex) return null;
+    const toks = String(ex).trim().split(/\s+/);
+    const cleanSpan = (arr) => arr.join(" ").replace(/^[^A-Za-z']+|[^A-Za-z']+$/g, "");
+    let best = null;
+    for (const v of expandVariants(en)) {
+      const dictWords = normalize(v).split(" ").filter(Boolean);
+      const L = dictWords.length;
+      if (!L) continue;
+      for (let i = 0; i + L <= toks.length; i++) {
+        const span = toks.slice(i, i + L);
+        const diffs = [];
+        for (let j = 0; j < L; j++) {
+          const nw = normalize(span[j]);
+          if (nw !== dictWords[j]) diffs.push({ idx: j, dict: dictWords[j], ex: nw });
+        }
+        if (diffs.length === 0) return { start: i, len: L, span: cleanSpan(span), diffs: [], exact: true };
+        if (diffs.length === 1 && !best) best = { start: i, len: L, span: cleanSpan(span), diffs, exact: false };
+      }
+    }
+    return best;
+  }
+
   return {
     dateStr, todayStr, addDays, hashStr, mulberry32, seededShuffle,
-    normalize, collapse, expandVariants, acceptedSet, matchAnswer,
+    normalize, collapse, expandVariants, acceptedSet, matchAnswer, findInText,
   };
 })();

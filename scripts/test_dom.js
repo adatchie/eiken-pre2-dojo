@@ -65,6 +65,18 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   check("開始ボタン表示", $("btn-start").style.display !== "none");
 
   // --- セッション開始 ---
+  // 先頭問題を go out（例文が活用形 went out）に固定して検証する
+  const todayStr = (() => {
+    const d = new Date();
+    return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+  })();
+  window.localStorage.setItem("dojo2_run_v1", JSON.stringify({
+    date: todayStr, seed: "dom-test", test: false,
+    queue: ["idiom-0001"], pos: 0,
+    correct: 0, wrong: 0, revealed: 0, timeouts: 0,
+    done: false, rewarded: false, finishedAt: null,
+    deadline: 0, deadlinePos: -1, answeredIds: [],
+  }));
   $("btn-start").click();
   await sleep(200);
   // 初回はログインボーナスメッセージが出る（仕様）→OKで閉じる
@@ -81,10 +93,21 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   check("問題表示（種別）", q1Kind.includes("単語") || q1Kind.includes("熟語"));
   check("問題表示（意味あり）", q1Meaning.length > 0);
   check("Lvバッジ表示（新規はLv1）", q1Kind.includes("Lv1"));
-  check("Lv1書き写し表示", $("q-transcript").style.display !== "none" && $("q-transcript").textContent.length > 0);
-  check("Lv1ヒント表示", $("q-hint").textContent.includes("そのまま入力"));
+  check("Lv1書き写し: 辞書形ラベル+go out表示", $("q-transcript").style.display !== "none" && $("q-transcript").textContent.includes("辞書形") && $("q-transcript").textContent.includes("go out"));
+  check("Lv1熟語: 例文ハイライト表示(went out)", $("q-example").querySelector(".hl") && $("q-example").querySelector(".hl").textContent.includes("went out"));
+  check("Lv1熟語: カードが例文優先レイアウト", $("question-card").classList.contains("lv1-idiom"));
+  check("Lv1熟語ヒント表示", $("q-hint").textContent.includes("例文を先に読んで"));
   check("タイマー表示", /^\d+$/.test($("timer").textContent));
   check("進捗表示", /\d+\/\d+/.test($("progress-mini").textContent));
+
+  // --- 活用形を入力した場合の専用フィードバック（went out → 辞書形を教える） ---
+  $("answer-input").value = "went out";
+  $("answer-form").dispatchEvent(new window.Event("submit", { bubbles: true, cancelable: true }));
+  await sleep(200);
+  check("活用形入力: 例文中の形と指摘", $("feedback").textContent.includes("例文の中で使われている形です"));
+  check("活用形入力: 辞書形を提示", $("feedback").textContent.includes("go out"));
+  $("answer-input").dispatchEvent(new window.KeyboardEvent("keydown", { key: "Enter", bubbles: true }));
+  await sleep(200);
 
   // --- 不正解 → 再出題 ---
   $("answer-input").value = "zzz_totally_wrong_answer";
