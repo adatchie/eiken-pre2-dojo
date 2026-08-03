@@ -1,0 +1,242 @@
+{
+ "cl05": {
+  "title": "北上 (軽巡洋艦)",
+  "img": "cl05.jpg"
+ },
+ "dd09": {
+  "title": "吹雪",
+  "img": "dd09.jpg"
+ },
+ "cl08": {
+  "title": "夕張 (軽巡洋艦)",
+  "img": "cl08.jpg"
+ },
+ "dd11": {
+  "title": "夕立",
+  "img": "dd11.jpg"
+ },
+ "cl06": {
+  "title": "大井 (軽巡洋艦)",
+  "img": "cl06.jpg"
+ },
+ "cl07": {
+  "title": "天龍 (軽巡洋艦)",
+  "img": "cl07.jpg"
+ },
+ "cl01": {
+  "title": "矢矧 (軽巡洋艦)",
+  "img": "cl01.jpg"
+ },
+ "cl04": {
+  "title": "神通 (軽巡洋艦)",
+  "img": "cl04.jpg"
+ },
+ "dd13": {
+  "title": "秋月 (駆逐艦)",
+  "img": "dd13.jpg"
+ },
+ "cl02": {
+  "title": "能代 (軽巡洋艦)",
+  "img": "cl02.jpg"
+ },
+ "dd15": {
+  "title": "長波 (駆逐艦)",
+  "img": "dd15.jpg"
+ },
+ "cl03": {
+  "title": "阿武隈 (軽巡洋艦)",
+  "img": "cl03.jpg"
+ },
+ "dd01": {
+  "title": "雪風 (駆逐艦)",
+  "img": "dd01.jpg"
+ },
+ "dd05": {
+  "title": "雷",
+  "img": "dd05.jpg"
+ },
+ "ca01": {
+  "title": "高雄 (重巡洋艦)",
+  "img": "ca01.jpg"
+ },
+ "ss04": {
+  "title": "伊号第五十八潜水艦",
+  "img": "ss04.jpg"
+ },
+ "ss02": {
+  "title": "伊号第四百一潜水艦",
+  "img": "ss02.jpg"
+ },
+ "ss01": {
+  "title": "伊号第四百潜水艦",
+  "img": "ss01.jpg"
+ },
+ "ss03": {
+  "title": "伊号第百六十八潜水艦",
+  "img": "ss03.jpg"
+ },
+ "cv10": {
+  "title": "信濃 (空母)",
+  "img": "cv10.jpg"
+ },
+ "cv03": {
+  "title": "加賀 (空母)",
+  "img": "cv03.jpg"
+ },
+ "ca05": {
+  "title": "妙高 (重巡洋艦)",
+  "img": "ca05.jpg"
+ },
+ "ca02": {
+  "title": "愛宕 (重巡洋艦)",
+  "img": "ca02.jpg"
+ },
+ "ca03": {
+  "title": "摩耶 (重巡洋艦)",
+  "img": "ca03.jpg"
+ },
+ "ca09": {
+  "title": "最上 (重巡洋艦)",
+  "img": "ca09.jpg"
+ },
+ "cv07": {
+  "title": "瑞鶴 (空母)",
+  "img": "cv07.jpg"
+ },
+ "ca06": {
+  "title": "羽黒 (重巡洋艦)",
+  "img": "ca06.jpg"
+ },
+ "cv06": {
+  "title": "翔鶴 (空母)",
+  "img": "cv06.jpg"
+ },
+ "cv04": {
+  "title": "蒼龍 (空母)",
+  "img": "cv04.jpg"
+ },
+ "cv02": {
+  "title": "赤城 (空母)",
+  "img": "cv02.jpg"
+ },
+ "ca08": {
+  "title": "足柄 (重巡洋艦)",
+  "img": "ca08.jpg"
+ },
+ "ca07": {
+  "title": "那智 (重巡洋艦)",
+  "img": "ca07.jpg"
+ },
+ "cv08": {
+  "title": "隼鷹 (空母)",
+  "img": "cv08.jpg"
+ },
+ "cv05": {
+  "title": "飛龍 (空母)",
+  "img": "cv05.jpg"
+ },
+ "ca04": {
+  "title": "鳥海 (重巡洋艦)",
+  "img": "ca04.jpg"
+ },
+ "cv01": {
+  "title": "鳳翔 (空母)",
+  "img": "cv01.jpg"
+ },
+ "cv11": {
+  "title": "龍驤 (空母)",
+  "img": "cv11.jpg"
+ },
+ "bb10": {
+  "title": "大和 (戦艦)",
+  "img": "bb10.jpg"
+ },
+ "bb08": {
+  "title": "山城",
+  "img": "bb08.jpg"
+ },
+ "bb07": {
+  "title": "扶桑",
+  "img": "bb07.png"
+ },
+ "bb05": {
+  "title": "榛名 (戦艦)",
+  "img": "bb05.jpg"
+ },
+ "bb09": {
+  "title": "武蔵 (戦艦)",
+  "img": "bb09.jpg"
+ },
+ "bb04": {
+  "title": "比叡 (戦艦)",
+  "img": "bb04.jpg"
+ },
+ "bb03": {
+  "title": "金剛 (戦艦)",
+  "img": "bb03.jpg"
+ },
+ "bb01": {
+  "title": "長門 (戦艦)",
+  "img": "bb01.jpg"
+ },
+ "bb02": {
+  "title": "陸奥 (戦艦)",
+  "img": "bb02.jpg"
+ },
+ "cv12": {
+  "title": "雲龍 (空母)",
+  "img": "cv12.jpg"
+ },
+ "bb06": {
+  "title": "霧島 (戦艦)",
+  "img": "bb06.jpg"
+ },
+ "dd02": {
+  "title": "島風 (島風型駆逐艦)",
+  "img": "dd02.jpg"
+ },
+ "dd06": {
+  "title": "電 (吹雪型駆逐艦)",
+  "img": "dd06.jpg"
+ },
+ "dd08": {
+  "title": "綾波 (吹雪型駆逐艦)",
+  "img": "dd08.png"
+ },
+ "dd12": {
+  "title": "白露 (白露型駆逐艦)",
+  "img": "dd12.jpg"
+ },
+ "dd16": {
+  "title": "初霜 (初春型駆逐艦)",
+  "img": "dd16.jpg"
+ },
+ "dd14": {
+  "title": "朝潮 (朝潮型駆逐艦)",
+  "img": "dd14.jpg"
+ },
+ "dd10": {
+  "title": "陽炎 (陽炎型駆逐艦)",
+  "img": "dd10.jpg"
+ },
+ "dd04": {
+  "title": "響 (吹雪型駆逐艦)",
+  "img": "dd04.jpg"
+ },
+ "dd03": {
+  "title": "時雨 (白露型駆逐艦)",
+  "img": "dd03.jpg"
+ },
+ "dd07": {
+  "title": "暁 (暁型駆逐艦)",
+  "img": "dd07.jpg"
+ },
+ "ca10": {
+  "title": "利根 (重巡洋艦)",
+  "img": "ca10.jpg"
+ },
+ "cv09": {
+  "title": "大鳳 (空母)",
+  "img": "cv09.jpg"
+ }
+}

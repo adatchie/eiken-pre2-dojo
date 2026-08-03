@@ -104,11 +104,21 @@ h2 { font-size: 1.4rem; text-align: center; margin: 16px 0; }
 .rewards-list { background: var(--card); border-radius: var(--radius); padding: 14px; margin: 12px 0; line-height: 2; }
 
 .cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 14px 0; }
-.card-item { background: var(--card); border-radius: var(--radius); padding: 12px; text-align: center; box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+.card-item { background: var(--card); border-radius: var(--radius); padding: 10px; text-align: center; box-shadow: 0 1px 4px rgba(0,0,0,.08); }
 .card-item.locked { opacity: .45; filter: grayscale(1); }
 .card-item .icon { font-size: 1.8rem; }
+.card-item.owned { cursor: pointer; transition: transform .1s; }
+.card-item.owned:active { transform: scale(.97); }
+.card-img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 8px; background: #e2e8f0; display: block; margin-bottom: 6px; }
 .card-item .name { font-weight: 800; font-size: .9rem; margin-top: 4px; }
 .card-item .desc { font-size: .75rem; color: var(--muted); margin-top: 2px; }
+.ship-modal-img { margin-bottom: 10px; }
+.ship-modal-img img { width: 100%; border-radius: 10px; display: block; }
+.ship-modal-img { font-size: 3rem; }
+.ship-modal-name { font-size: 1.3rem; font-weight: 800; margin-bottom: 2px; }
+.ship-modal-type { font-size: .85rem; color: var(--muted); margin-bottom: 8px; }
+.ship-modal-desc { font-size: .95rem; line-height: 1.7; }
+.ship-modal-src { font-size: .7rem; color: #94a3b8; margin-top: 8px; }
 .fleet-summary { grid-column: 1 / -1; text-align: center; font-size: 1.05rem; padding: 10px; background: var(--card); border-radius: var(--radius); }
 .fleet-type { grid-column: 1 / -1; font-weight: 800; font-size: .95rem; color: var(--primary); margin-top: 8px; padding-left: 2px; }
 .fleet-complete { grid-column: 1 / -1; text-align: center; font-weight: 800; font-size: 1.1rem; padding: 14px; color: var(--accent); }

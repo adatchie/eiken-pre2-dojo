@@ -182,6 +182,33 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   check("軍艦60隻表示", window.document.querySelectorAll(".card-item").length === 60);
   check("レア艦タグ表示", $("cards-grid").textContent.includes("レア"));
   check("レア解放条件表示", $("cards-grid").textContent.includes("Lv2クリア"));
+  await sleep(300); // manifestフェッチ完了待ち
+  const imgs = window.document.querySelectorAll(".card-img");
+  check("画像カード表示（60隻分）", imgs.length === 60);
+  check("画像srcがimg/ships/配下", imgs.length > 0 && [...imgs].every((im) => im.src.includes("img/ships/")));
+  // 配属済みカード→詳細モーダル（localStorageに所有艦を仕込む。defaults()のリテラル展開）
+  const defaultsJson = JSON.stringify({
+    coins: 0, xp: 0, streak: 0, maxStreak: 0, lastStudyDate: null,
+    lastLoginClaim: null, calendarStart: null, calendarDay: 0,
+    sessionsDone: 0, flawless: 0, totalCorrect: 0, totalWrong: 0,
+    wordCorrect: 0, idiomCorrect: 0,
+    ships: ["dd01"], shipLastAward: null, lv3Mastered: [], history: [],
+  });
+  window.localStorage.setItem("dojo2_stats_v1", defaultsJson);
+  $("btn-cards-back").click();
+  await sleep(50);
+  $("btn-cards").click();
+  await sleep(200);
+  const ownedCard = window.document.querySelector(".card-item.owned");
+  check("配属済みカードにownedクラス", !!ownedCard);
+  if (ownedCard) {
+    ownedCard.click();
+    await sleep(50);
+    check("タップで詳細モーダル（画像＋解説）",
+      $("modal").style.display === "flex" && $("modal-box").querySelector(".ship-modal-img") && $("modal-box").textContent.includes("雪風"));
+    $("modal-ok").click();
+    await sleep(50);
+  }
 
   // --- モーダル（OKで閉じる） ---
   $("btn-cards-back").click();

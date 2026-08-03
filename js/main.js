@@ -399,6 +399,31 @@
   }
 
   // ---------- 軍艦図鑑 ----------
+  let SHIP_MANIFEST = {};  // {shipId: {title, img}} — img/ships/manifest.json
+  async function loadShipManifest() {
+    try {
+      const res = await fetch("img/ships/manifest.json");
+      if (res.ok) SHIP_MANIFEST = await res.json();
+    } catch (e) { /* 画像なしでも動作は継続 */ }
+  }
+  function shipImg(id) {
+    const m = SHIP_MANIFEST[id];
+    return m && m.img ? `img/ships/${m.img}` : null;
+  }
+  function openShipModal(id) {
+    const ship = Rewards.FLEET.find((s) => s.id === id);
+    if (!ship) return;
+    const idx = Rewards.FLEET.indexOf(ship);
+    const isRare = idx >= Rewards.REGULAR_COUNT;
+    const img = shipImg(id);
+    showModal(
+      `<div class="ship-modal-img">${img ? `<img src="${img}" alt="${escapeHtml(ship.name)}">` : "⚓"}</div>
+      <div class="ship-modal-name">${escapeHtml(ship.name)}${isRare ? " <span class='rare-tag'>レア</span>" : ""}</div>
+      <div class="ship-modal-type">${escapeHtml(ship.type)}</div>
+      <div class="ship-modal-desc">${escapeHtml(ship.note)}</div>` +
+      (SHIP_MANIFEST[id] ? `<div class="ship-modal-src">画像: Wikipedia</div>` : "")
+    );
+  }
   function openCards() {
     profile = Rewards.load();
     const owned = new Set(profile.ships);
@@ -423,8 +448,12 @@
           : (idx >= Rewards.REGULAR_COUNT
             ? `Lv2クリア${Rewards.RARE_FIRST + (idx - Rewards.REGULAR_COUNT) * Rewards.RARE_STEP}語で解放`
             : "セッション完走で配属");
-        return `<div class="card-item ${has ? "" : "locked"} ${idx >= Rewards.REGULAR_COUNT ? "rare" : ""}">
-          <div class="icon">${has ? "⚓" : "🌊"}</div>
+        const img = shipImg(ship.id);
+        const imgHtml = img
+          ? `<img class="card-img" src="${img}" alt="" loading="lazy">`
+          : `<div class="icon">${has ? "⚓" : "🌊"}</div>`;
+        return `<div class="card-item ${has ? "" : "locked"} ${idx >= Rewards.REGULAR_COUNT ? "rare" : ""}${has ? " owned" : ""}" data-ship="${ship.id}">
+          ${imgHtml}
           <div class="name">${has ? ship.name : "？？？"}</div>
           <div class="desc">${desc}</div>
         </div>`;
@@ -434,6 +463,10 @@
       html += `<div class="fleet-complete">🎌 連合艦隊 全艦コンプリート！</div>`;
     }
     grid.innerHTML = html;
+    // 配属済みカードはタップで詳細モーダル
+    grid.querySelectorAll(".card-item.owned").forEach((el) => {
+      el.onclick = () => openShipModal(el.dataset.ship);
+    });
     show("cards");
   }
 
@@ -543,6 +576,7 @@
       return;
     }
     SRS.migrateTo2Lv();  // 旧Lv1書き写し廃止に伴うLv再編（1回だけ）
+    loadShipManifest();  // 画像カード用（非同期・失敗しても動作継続）
     bind();
     renderHome();
   }

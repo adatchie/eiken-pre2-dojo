@@ -1,0 +1,242 @@
+{
+ "cl05": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Japanese_cruiser_Kitakami_in_1935.jpg/960px-Japanese_cruiser_Kitakami_in_1935.jpg",
+  "title": "北上 (軽巡洋艦)"
+ },
+ "dd09": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Wind%27s_play_with_snow.jpg/960px-Wind%27s_play_with_snow.jpg",
+  "title": "吹雪"
+ },
+ "cl08": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Yubari_-_19-N-9957.jpg/960px-Yubari_-_19-N-9957.jpg",
+  "title": "夕張 (軽巡洋艦)"
+ },
+ "dd11": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Cumulonimbus_cloud_in_Japan_2.jpg/960px-Cumulonimbus_cloud_in_Japan_2.jpg",
+  "title": "夕立"
+ },
+ "cl06": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/IJN_Oi_in_1923_at_Kure.jpg/960px-IJN_Oi_in_1923_at_Kure.jpg",
+  "title": "大井 (軽巡洋艦)"
+ },
+ "cl07": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/IJN_Tenru_in_Yokosuka_1925.jpg/960px-IJN_Tenru_in_Yokosuka_1925.jpg",
+  "title": "天龍 (軽巡洋艦)"
+ },
+ "cl01": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Japanese_light_cruiser_Yahagi_underway_off_Sasebo%2C_Japan%2C_in_December_1943.jpg/960px-Japanese_light_cruiser_Yahagi_underway_off_Sasebo%2C_Japan%2C_in_December_1943.jpg",
+  "title": "矢矧 (軽巡洋艦)"
+ },
+ "cl04": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Sendai_class_light_cruiser.jpg",
+  "title": "神通 (軽巡洋艦)"
+ },
+ "dd13": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Akizuki.jpg/960px-Akizuki.jpg",
+  "title": "秋月 (駆逐艦)"
+ },
+ "cl02": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Japanese_cruiser_Noshiro_in_1943.jpg/960px-Japanese_cruiser_Noshiro_in_1943.jpg",
+  "title": "能代 (軽巡洋艦)"
+ },
+ "dd15": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Naganami.jpg/960px-Naganami.jpg",
+  "title": "長波 (駆逐艦)"
+ },
+ "cl03": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Abukuma_cl1941.jpg/960px-Abukuma_cl1941.jpg",
+  "title": "阿武隈 (軽巡洋艦)"
+ },
+ "dd01": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Yukikaze_2.jpg/960px-Yukikaze_2.jpg",
+  "title": "雪風 (駆逐艦)"
+ },
+ "dd05": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Lightning_over_Oradea_Romania_3.jpg/960px-Lightning_over_Oradea_Romania_3.jpg",
+  "title": "雷"
+ },
+ "ca01": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Takao%2C_surrendered_to_British_forces_at_Singapore.jpg/960px-Takao%2C_surrendered_to_British_forces_at_Singapore.jpg",
+  "title": "高雄 (重巡洋艦)"
+ },
+ "ss04": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/7/70/IJN_SS_I-58%28II%29_on_trial_run_in_1944.jpg",
+  "title": "伊号第五十八潜水艦"
+ },
+ "ss02": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/1/16/Japanese_submarine_I-14_in_1945.jpg",
+  "title": "伊号第四百一潜水艦"
+ },
+ "ss01": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/I400_2.jpg/960px-I400_2.jpg",
+  "title": "伊号第四百潜水艦"
+ },
+ "ss03": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/I-68.jpg/960px-I-68.jpg",
+  "title": "伊号第百六十八潜水艦"
+ },
+ "cv10": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Japanese_aircraft_carrier_Shinano.jpg/960px-Japanese_aircraft_carrier_Shinano.jpg",
+  "title": "信濃 (空母)"
+ },
+ "cv03": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Japanese_Navy_Aircraft_Carrier_Kaga.jpg/960px-Japanese_Navy_Aircraft_Carrier_Kaga.jpg",
+  "title": "加賀 (空母)"
+ },
+ "ca05": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/My%C5%8Dk%C5%8D_trials_1941.jpg/960px-My%C5%8Dk%C5%8D_trials_1941.jpg",
+  "title": "妙高 (重巡洋艦)"
+ },
+ "ca02": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Japanese_cruiser_Atago.jpg/960px-Japanese_cruiser_Atago.jpg",
+  "title": "愛宕 (重巡洋艦)"
+ },
+ "ca03": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Heavy_Cruiser_Maya.jpg/960px-Heavy_Cruiser_Maya.jpg",
+  "title": "摩耶 (重巡洋艦)"
+ },
+ "ca09": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Mogami1935.jpg/960px-Mogami1935.jpg",
+  "title": "最上 (重巡洋艦)"
+ },
+ "cv07": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Japanese.aircraft.carrier.zuikaku.jpg/960px-Japanese.aircraft.carrier.zuikaku.jpg",
+  "title": "瑞鶴 (空母)"
+ },
+ "ca06": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Schwerer_Kreuzer_Haguro.jpg",
+  "title": "羽黒 (重巡洋艦)"
+ },
+ "cv06": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Aircraft_carrier_shokaku_h73066.jpg/960px-Aircraft_carrier_shokaku_h73066.jpg",
+  "title": "翔鶴 (空母)"
+ },
+ "cv04": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Japanese_aircraft_carrier_Soryu_02_cropped.jpg/960px-Japanese_aircraft_carrier_Soryu_02_cropped.jpg",
+  "title": "蒼龍 (空母)"
+ },
+ "cv02": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/7/7b/AkagiDeckApril42.jpg",
+  "title": "赤城 (空母)"
+ },
+ "ca08": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Wizyta_japo%C5%84skiego_kr%C4%85%C5%BCownika_Ashigara_w_Niemczech_%281-E-8502%29.jpg/960px-Wizyta_japo%C5%84skiego_kr%C4%85%C5%BCownika_Ashigara_w_Niemczech_%281-E-8502%29.jpg",
+  "title": "足柄 (重巡洋艦)"
+ },
+ "ca07": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/NH_111605_Japanese_heavy_cruiser%2C_HIJMS_NACHI_%28cropped%29.jpg/960px-NH_111605_Japanese_heavy_cruiser%2C_HIJMS_NACHI_%28cropped%29.jpg",
+  "title": "那智 (重巡洋艦)"
+ },
+ "cv08": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Japanese_aircraft_carrier_Juny%C5%8D_moored_at_Sasebo%2C_Japan%2C_in_1945_%2880-G-701429%29.jpg/960px-Japanese_aircraft_carrier_Juny%C5%8D_moored_at_Sasebo%2C_Japan%2C_in_1945_%2880-G-701429%29.jpg",
+  "title": "隼鷹 (空母)"
+ },
+ "cv05": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Japanese_aircraft_carrier_Hiryu.jpg/960px-Japanese_aircraft_carrier_Hiryu.jpg",
+  "title": "飛龍 (空母)"
+ },
+ "ca04": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Takao_class_heavy_cruiser_Chokai.jpg/960px-Takao_class_heavy_cruiser_Chokai.jpg",
+  "title": "鳥海 (重巡洋艦)"
+ },
+ "cv01": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Japanese_aircraft_carrier_Hosho_1922.JPG/960px-Japanese_aircraft_carrier_Hosho_1922.JPG",
+  "title": "鳳翔 (空母)"
+ },
+ "cv11": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Japanese_aircraft_carrier_Ry%C5%ABj%C5%8D_underway_on_6_September_1934.jpg/960px-Japanese_aircraft_carrier_Ry%C5%ABj%C5%8D_underway_on_6_September_1934.jpg",
+  "title": "龍驤 (空母)"
+ },
+ "bb10": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Yamato_during_Trial_Service.jpg/960px-Yamato_during_Trial_Service.jpg",
+  "title": "大和 (戦艦)"
+ },
+ "bb08": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Marksburg1900.jpg/960px-Marksburg1900.jpg",
+  "title": "山城"
+ },
+ "bb07": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Imperial_Encyclopaedia_-_Borders_-_pic016_-_%E6%89%B6%E6%A1%91%E5%9C%8B.svg/960px-Imperial_Encyclopaedia_-_Borders_-_pic016_-_%E6%89%B6%E6%A1%91%E5%9C%8B.svg.png",
+  "title": "扶桑"
+ },
+ "bb05": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Haruna_1934.jpg/960px-Haruna_1934.jpg",
+  "title": "榛名 (戦艦)"
+ },
+ "bb09": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Musashi_battleship_in_1942.jpg/960px-Musashi_battleship_in_1942.jpg",
+  "title": "武蔵 (戦艦)"
+ },
+ "bb04": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Hiei_Tsukugewan.jpg/960px-Hiei_Tsukugewan.jpg",
+  "title": "比叡 (戦艦)"
+ },
+ "bb03": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/The_Japanese_battleship_Kong%C5%8D_on_sea_trials%2C_off_the_coast_of_Tateyama%2C_14_November_1936_%28cropped%29.jpg/960px-The_Japanese_battleship_Kong%C5%8D_on_sea_trials%2C_off_the_coast_of_Tateyama%2C_14_November_1936_%28cropped%29.jpg",
+  "title": "金剛 (戦艦)"
+ },
+ "bb01": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Japanese_Battleship_Nagato_1944.jpg/960px-Japanese_Battleship_Nagato_1944.jpg",
+  "title": "長門 (戦艦)"
+ },
+ "bb02": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/6/62/Japanese_battleship_Mutsu.jpg",
+  "title": "陸奥 (戦艦)"
+ },
+ "cv12": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Japanese_aircraft_carrierUnryu.jpg/960px-Japanese_aircraft_carrierUnryu.jpg",
+  "title": "雲龍 (空母)"
+ },
+ "bb06": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Kirishima_Kure_1940.jpg/960px-Kirishima_Kure_1940.jpg",
+  "title": "霧島 (戦艦)"
+ },
+ "dd02": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Shimakaze.jpg/960px-Shimakaze.jpg",
+  "title": "島風 (島風型駆逐艦)"
+ },
+ "dd06": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/8/82/Japanese_destroyer_Inazuma_1937.jpg",
+  "title": "電 (吹雪型駆逐艦)"
+ },
+ "dd08": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Naval_battle_of_Guadalcanal%2C_November_14%2C_1942.png/960px-Naval_battle_of_Guadalcanal%2C_November_14%2C_1942.png",
+  "title": "綾波 (吹雪型駆逐艦)"
+ },
+ "dd12": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/c/c6/IJN_DD_Shiratsuyu_in_1937.jpg",
+  "title": "白露 (白露型駆逐艦)"
+ },
+ "dd16": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Hatsushimo-1.jpg/960px-Hatsushimo-1.jpg",
+  "title": "初霜 (初春型駆逐艦)"
+ },
+ "dd14": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Asashio_II.jpg/960px-Asashio_II.jpg",
+  "title": "朝潮 (朝潮型駆逐艦)"
+ },
+ "dd10": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Main-qimg-33c877234128c6b4296ee9786cfa4ff4.jpg",
+  "title": "陽炎 (陽炎型駆逐艦)"
+ },
+ "dd04": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Hibiki.jpg/960px-Hibiki.jpg",
+  "title": "響 (吹雪型駆逐艦)"
+ },
+ "dd03": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/5/5b/IJN_DD_Shigure_in_1939.jpg",
+  "title": "時雨 (白露型駆逐艦)"
+ },
+ "dd07": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/NH_73049_AKATSUKI_%28Japanese_Destroyer%2C_1932%29.jpg/960px-NH_73049_AKATSUKI_%28Japanese_Destroyer%2C_1932%29.jpg",
+  "title": "暁 (暁型駆逐艦)"
+ },
+ "ca10": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Aerial_view_of_Japanese_cruiser_Tone_during_the_Battle_of_the_Eastern_Solomons%2C_24_August_1942_%2880-G-88024%29.jpg/960px-Aerial_view_of_Japanese_cruiser_Tone_during_the_Battle_of_the_Eastern_Solomons%2C_24_August_1942_%2880-G-88024%29.jpg",
+  "title": "利根 (重巡洋艦)"
+ },
+ "cv09": {
+  "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Japanese_aircraft_carrier_Taiho_01.jpg/960px-Japanese_aircraft_carrier_Taiho_01.jpg",
+  "title": "大鳳 (空母)"
+ }
+}
