@@ -98,20 +98,16 @@ SRS.onWrong("w1");
 const map3 = SRS.all();
 check("SRS 不正解→stage0 due=+1日", map3.w1.stage === 0 && map3.w1.due === U.addDays(today, 1));
 
-// --- SRS: Lv制 ---
+// --- SRS: Lv制（2段階: 1=一部表示 2=本番） ---
 Store.set("review_v1", {});
 SRS.introduceMany(["lv1"]);
 check("Lv初期値=1", SRS.lvOf(SRS.all(), "lv1") === 1);
 SRS.onCorrect("lv1");
-check("正解→Lv2に昇格", SRS.lvOf(SRS.all(), "lv1") === 2);
+check("正解→Lv2（本番）に昇格", SRS.lvOf(SRS.all(), "lv1") === 2);
 SRS.onCorrect("lv1");
-check("再度正解→Lv3", SRS.lvOf(SRS.all(), "lv1") === 3);
-SRS.onCorrect("lv1");
-check("Lv3が上限", SRS.lvOf(SRS.all(), "lv1") === 3);
+check("Lv2が上限（Lv3は存在しない）", SRS.lvOf(SRS.all(), "lv1") === 2);
 SRS.onWrong("lv1");
-check("不正解→Lv2に降格", SRS.lvOf(SRS.all(), "lv1") === 2);
-SRS.onWrong("lv1");
-SRS.onWrong("lv1");
+check("不正解→Lv1に降格", SRS.lvOf(SRS.all(), "lv1") === 1);
 SRS.onWrong("lv1");
 check("Lvは1未満にならない", SRS.lvOf(SRS.all(), "lv1") === 1);
 SRS.introduceMany(["lvtest"]);
@@ -120,6 +116,24 @@ check("noLv: 正解でもLv1のまま（テストモード）", SRS.lvOf(SRS.all
 SRS.onWrong("lvtest", { noLv: true });
 check("noLv: 不正解でもLv1のまま", SRS.lvOf(SRS.all(), "lvtest") === 1);
 check("未導入項目のLv=1", SRS.lvOf(SRS.all(), "unknown_item") === 1);
+
+// --- SRS: 3段階→2段階 移行（旧Lv1書き写し廃止） ---
+Store.set("review_v1", {
+  old_lv1: { stage: 1, due: today, ok: 1, bad: 0, introduced: today, lv: 1 },
+  old_lv2: { stage: 2, due: today, ok: 2, bad: 0, introduced: today, lv: 2 },
+  old_lv3: { stage: 3, due: today, ok: 3, bad: 0, introduced: today, lv: 3 },
+});
+Store.remove("review_migrated_v2");
+check("移行が実行される(true)", SRS.migrateTo2Lv() === true);
+const mig = SRS.all();
+check("移行: 旧Lv1→新Lv1（書き写し昇格は無効化）", mig.old_lv1.lv === 1);
+check("移行: 旧Lv2→新Lv1（一部表示からやり直し）", mig.old_lv2.lv === 1);
+check("移行: 旧Lv3→新Lv2（本番クリア実績は保持）", mig.old_lv3.lv === 2);
+check("stage/due等その他のフィールドは維持", mig.old_lv3.stage === 3 && mig.old_lv3.due === today);
+check("2回目の移行はスキップ(false)", SRS.migrateTo2Lv() === false);
+// 移行済み環境で後から入る新データ（lv=2）は移行フラグの影響を受けない
+Store.set("review_v1", { new_item: { stage: 1, due: today, ok: 1, bad: 0, introduced: today, lv: 2 } });
+check("移行済み後に追加されたデータはそのまま（lv2維持）", SRS.lvOf(SRS.all(), "new_item") === 2);
 
 // --- Session: 逃げ場ゼロ ---
 const ids = ["a", "b", "c"];
@@ -212,10 +226,9 @@ plv.streak = 1;
 const c0 = plv.coins;
 Rewards.onAnswer(plv, true, "word", 1);
 Rewards.onAnswer(plv, true, "word", 2);
-Rewards.onAnswer(plv, true, "word", 3);
-check("Lv別コイン 10+15+20=45", plv.coins === c0 + 45);
+check("Lv別コイン 15+20=35", plv.coins === c0 + 35);
 
-// --- レア艦解放（Lv3クリア累計） ---
+// --- レア艦解放（Lv2クリア累計） ---
 Store.set("stats_v1", Rewards.defaults());
 const pr = Rewards.load();
 for (let i = 0; i < Rewards.RARE_FIRST - 1; i++) Rewards.recordLv3Clear(pr, "m" + i);

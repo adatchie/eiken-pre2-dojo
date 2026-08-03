@@ -5,7 +5,7 @@
   const NEW_PER_DAY = 20;
   const MAX_PER_DAY = 60;
   const TIME_LIMIT = 20; // 秒
-  const LV_NAMES = { 1: "Lv1 書き写し", 2: "Lv2 一部表示", 3: "Lv3 本番" };
+  const LV_NAMES = { 1: "Lv1 一部表示", 2: "Lv2 本番" };
 
   let WORDS = [];   // {id,en,ja,kind:"word"}
   let IDIOMS = [];  // {id,en,ja,ex,cat,tier,kind:"idiom"}
@@ -106,7 +106,7 @@
 
   // ---------- 出題 ----------
   function currentLv(id) {
-    return mode === "test" ? 3 : SRS.lvOf(SRS.all(), id);
+    return mode === "test" ? 2 : SRS.lvOf(SRS.all(), id);
   }
 
   function renderQuestion() {
@@ -118,28 +118,14 @@
     $("q-kind").innerHTML = escapeHtml(it.kind === "idiom" ? `熟語 ${it.tier ? "【でる度" + it.tier + "】" : ""}` : "単語") +
       ` <span class="lv-badge lv${lv}">${LV_NAMES[lv]}</span>`;
     $("q-meaning").textContent = it.ja;
-    // 例文: Lv1は熟語部分をハイライトして表示（使い方を先に意識させる）
-    //      Lv2/3は空所化（活用形でも正しく空所にする）
+    // 例文: 熟語部分を空所化（活用形でも正しく空所にする）
     const exEl = $("q-example");
     if (it.kind === "idiom" && it.ex) {
-      exEl.innerHTML = lv === 1 ? highlightExample(it) : blankExample(it);
-      exEl.classList.toggle("emph", lv === 1);
+      exEl.innerHTML = blankExample(it);
     } else {
       exEl.textContent = "";
-      exEl.classList.remove("emph");
-    }
-    // Lv1書き写し: 辞書形（基本表現）を表示して書き写す
-    const tr = $("q-transcript");
-    if (lv === 1) {
-      tr.innerHTML = `<span class="tr-label">辞書形</span>${escapeHtml(U.expandVariants(it.en)[0])}`;
-      tr.style.display = "";
-    } else {
-      tr.innerHTML = "";
-      tr.style.display = "none";
     }
     $("q-hint").textContent = hintFor(it, lv);
-    // Lv1熟語は「例文→辞書形」の視覚順序に切り替え
-    $("question-card").classList.toggle("lv1-idiom", lv === 1 && it.kind === "idiom" && !!it.ex);
     $("feedback").textContent = "";
     $("feedback").className = "feedback";
     const inp = $("answer-input");
@@ -158,7 +144,7 @@
     return { toks, hit };
   }
 
-  // Lv2/3用: 熟語部分を空欄化（活用形 went out なども正しく空所にする）
+  // 熟語部分を空欄化（活用形 went out なども正しく空所にする）
   function blankExample(it) {
     const { toks, hit } = exampleTokens(it);
     if (!hit) return escapeHtml(it.ex);
@@ -169,30 +155,15 @@
     return parts.join(" ");
   }
 
-  // Lv1用: 熟語部分をハイライト（例文の中の使われ方をそのまま見せる）
-  function highlightExample(it) {
-    const { toks, hit } = exampleTokens(it);
-    if (!hit) return escapeHtml(it.ex);
-    const parts = [];
-    if (hit.start > 0) parts.push(escapeHtml(toks.slice(0, hit.start).join(" ")));
-    parts.push(`<span class="hl">${escapeHtml(toks.slice(hit.start, hit.start + hit.len).join(" "))}</span>`);
-    if (hit.start + hit.len < toks.length) parts.push(escapeHtml(toks.slice(hit.start + hit.len).join(" ")));
-    return parts.join(" ");
-  }
-
   function hintFor(it, lv) {
     const n = U.normalize(U.expandVariants(it.en)[0]);
     const words = n.split(" ");
     if (lv === 1) {
-      if (it.kind === "idiom" && it.ex) return "例文を先に読んでから、下の辞書形をそのまま入力しよう！";
-      return "上の英語をそのまま入力しよう！";
-    }
-    if (lv === 2) {
-      // 各単語の頭文字だけ表示
+      // 一部表示: 各単語の頭文字だけ表示（意味→綴りの想起を必ず起こす）
       const masked = words.map((w) => w[0] + "_".repeat(Math.max(0, w.length - 1))).join(" ");
       return `ヒント: ${masked}`;
     }
-    // Lv3: 単語数＋文字数のみ
+    // Lv2本番: 単語数＋文字数のみ
     return `ヒント: ${words.length}語 ／ ${words.map((w) => w.length).join("+")}文字`;
   }
 
@@ -259,15 +230,15 @@
     sess = Session.answer(sess, id, ok, {});
     Rewards.onAnswer(profile, ok, it.kind, lv);
     let unlocked = [];
-    if (ok && lv === 3 && mode === "daily") {
+    if (ok && lv === 2 && mode === "daily") {
       unlocked = Rewards.recordLv3Clear(profile, id);
     }
     const fb = $("feedback");
     if (ok) {
       combo++;
       let msg = `⭕ 正解！ ${combo >= 3 ? "🔥" + combo + "コンボ！" : ""}`;
-      if (mode === "daily" && lv < 3) msg += `<br><span style="font-size:.85rem">⬆️ ${LV_NAMES[lv + 1]} に昇格！</span>`;
-      if (mode === "daily" && lv === 3) msg += `<br><span style="font-size:.85rem;color:#64748b">Lv3クリア！（累計${profile.lv3Mastered.length}語）</span>`;
+      if (mode === "daily" && lv < 2) msg += `<br><span style="font-size:.85rem">⬆️ ${LV_NAMES[lv + 1]} に昇格！</span>`;
+      if (mode === "daily" && lv === 2) msg += `<br><span style="font-size:.85rem;color:#64748b">Lv2クリア！（累計${profile.lv3Mastered.length}語）</span>`;
       if (unlocked.length) {
         msg += unlocked.map((s) => `<br><b>🔓 レア艦解放！ ${s.type}「${s.name}」</b>`).join("");
       }
@@ -381,7 +352,7 @@
         intro.innerHTML = "まだ弱点データがありません。<br>まず日々の修行で問題を解こう！";
         $("btn-test-start").style.display = "none";
       } else {
-        intro.innerHTML = `苦手な問題から <b>${ids.length}問</b> 出題します。<br>全問 <b>Lv3 本番形式</b>（単語数＋文字数のみ）・制限時間あり・再出題なしです。`;
+        intro.innerHTML = `苦手な問題から <b>${ids.length}問</b> 出題します。<br>全問 <b>Lv2 本番形式</b>（単語数＋文字数のみ）・制限時間あり・再出題なしです。`;
         $("btn-test-start").style.display = "";
       }
     }
@@ -413,7 +384,7 @@
       正解 ${sum.correct}問 ／ ミス ${sum.wrong}問 ／ 連続学習 ${sum.streak}日<br><br>
       <b>【進度】</b><br>
       導入済み: ${introduced}語 ／ 定着(4回以上連続正解): ${mastered}語<br>
-      Lv3クリア（本番難易度で正解）: <b>${profile.lv3Mastered.length}語</b><br>
+      Lv2クリア（本番難易度で正解）: <b>${profile.lv3Mastered.length}語</b><br>
       ランク: ${rank.name} ／ XP: ${profile.xp} ／ コイン: ${profile.coins}<br>
       配属済み軍艦: ${profile.ships.length}隻 ／ ${Rewards.FLEET.length}隻（レア解放まで: ${Rewards.nextRareThreshold(profile) ? Rewards.nextRareThreshold(profile) - profile.lv3Mastered.length + "語" : "全解放"}）`;
     if (profile.history.length) {
@@ -435,7 +406,7 @@
     const mastered = profile.lv3Mastered.length;
     const nextThr = Rewards.nextRareThreshold(profile);
     let html = `<div class="fleet-summary">配属進捗 <b>${profile.ships.length}</b> ／ ${Rewards.FLEET.length}隻<br>
-      <span style="font-size:.85rem">Lv3クリア累計: <b>${mastered}語</b>${nextThr ? `（次のレア艦は${nextThr}語で解放）` : "（レア艦すべて解放済み）"}</span></div>`;
+      <span style="font-size:.85rem">Lv2クリア累計: <b>${mastered}語</b>${nextThr ? `（次のレア艦は${nextThr}語で解放）` : "（レア艦すべて解放済み）"}</span></div>`;
     const byType = {};
     Rewards.FLEET.forEach((ship, idx) => {
       (byType[ship.type] = byType[ship.type] || []).push({ ship, idx });
@@ -450,7 +421,7 @@
         const has = owned.has(ship.id);
         const desc = has ? ship.note
           : (idx >= Rewards.REGULAR_COUNT
-            ? `Lv3クリア${Rewards.RARE_FIRST + (idx - Rewards.REGULAR_COUNT) * Rewards.RARE_STEP}語で解放`
+            ? `Lv2クリア${Rewards.RARE_FIRST + (idx - Rewards.REGULAR_COUNT) * Rewards.RARE_STEP}語で解放`
             : "セッション完走で配属");
         return `<div class="card-item ${has ? "" : "locked"} ${idx >= Rewards.REGULAR_COUNT ? "rare" : ""}">
           <div class="icon">${has ? "⚓" : "🌊"}</div>
@@ -571,6 +542,7 @@
         例: <code>python3 -m http.server</code></div>`;
       return;
     }
+    SRS.migrateTo2Lv();  // 旧Lv1書き写し廃止に伴うLv再編（1回だけ）
     bind();
     renderHome();
   }

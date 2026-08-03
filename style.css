@@ -77,14 +77,7 @@ h2 { font-size: 1.4rem; text-align: center; margin: 16px 0; }
   padding: 20px 16px; margin-bottom: 14px;
   box-shadow: 0 2px 8px rgba(0,0,0,.1);
 }
-/* Lv1熟語: 例文（ハイライト）→辞書形 の順に見せる */
-.question-card.lv1-idiom { display: flex; flex-direction: column; }
-.question-card.lv1-idiom .q-example { order: 3; }
-.question-card.lv1-idiom .q-transcript { order: 4; margin-top: 4px; }
-.question-card.lv1-idiom .q-hint { order: 5; }
-.q-example.emph { font-size: 1.05rem; color: var(--ink); background: #fffbeb; border-radius: 8px; padding: 10px 12px; margin-bottom: 8px; }
-.q-example .hl { color: #b45309; font-weight: 800; background: #fde68a; border-radius: 4px; padding: 1px 4px; }
-.tr-label { display: inline-block; font-size: .65rem; font-weight: 700; color: #fff; background: #3b82f6; border-radius: 4px; padding: 1px 6px; margin-right: 8px; vertical-align: middle; }
+/* Lv1熟語: 例文（ハイライト）→辞書形 の順に見せる（廃止: Lv1書き写し撤去） */
 .q-kind { display: inline-block; font-size: .75rem; font-weight: 700; background: #dbeafe; color: var(--primary); padding: 3px 10px; border-radius: 999px; margin-bottom: 10px; }
 .q-meaning { font-size: 1.35rem; font-weight: 800; line-height: 1.5; margin-bottom: 10px; }
 .q-example { font-size: .95rem; color: var(--muted); line-height: 1.6; }
@@ -123,10 +116,8 @@ h2 { font-size: 1.4rem; text-align: center; margin: 16px 0; }
 .card-item.rare { border: 1px solid #f59e0b66; }
 
 .lv-badge { display: inline-block; margin-left: 6px; padding: 2px 8px; font-size: .72rem; border-radius: 999px; color: #fff; vertical-align: middle; }
-.lv-badge.lv1 { background: #22c55e; }
-.lv-badge.lv2 { background: #3b82f6; }
-.lv-badge.lv3 { background: #ef4444; }
-.q-transcript { font-size: 1.5rem; font-weight: 800; color: var(--primary); background: #f0f9ff; border: 2px dashed #3b82f688; border-radius: var(--radius); padding: 10px 14px; margin: 8px 0; letter-spacing: .02em; }
+.lv-badge.lv1 { background: #3b82f6; }
+.lv-badge.lv2 { background: #ef4444; }
 
 .modal { position: fixed; inset: 0; background: rgba(0,0,0,.55); display: flex; align-items: center; justify-content: center; z-index: 100; }
 .modal-box { background: #fff; border-radius: var(--radius); padding: 24px; max-width: 90%; width: 380px; text-align: center; font-size: 1rem; line-height: 1.9; box-shadow: 0 8px 30px rgba(0,0,0,.3); }

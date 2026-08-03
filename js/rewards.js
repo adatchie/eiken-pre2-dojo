@@ -84,11 +84,11 @@ const Rewards = (() => {
     { id: "bb10", name: "大和", type: "戦艦", note: "世界最大の戦艦・最後の一隻" },
   ];
 
-  // ===== 配属ルール（Lv制対応 v2）=====
+  // ===== 配属ルール（Lv制対応 v3: 2段階制）=====
   // 通常艦: 駆逐艦(16)+軽巡(8)+重巡(10)=34隻 → 毎日のセッション完走で1日1隻（従来どおり）
-  // レア艦: 潜水艦(4)+空母(12)+戦艦(10)=26隻 → Lv3クリア（本番難易度で正解）した語数の累計で解放
+  // レア艦: 潜水艦(4)+空母(12)+戦艦(10)=26隻 → Lv2クリア（本番難易度で正解）した語数の累計で解放
   const REGULAR_COUNT = 34;             // FLEET先頭34隻が通常枠
-  const RARE_FIRST = 25;                // 初のレア艦解放に必要なLv3クリア語数
+  const RARE_FIRST = 25;                // 初のレア艦解放に必要なLv2クリア語数
   const RARE_STEP = 25;                 // 以降この語数ごとに1隻（大和=650語）
 
   function defaults() {
@@ -103,7 +103,7 @@ const Rewards = (() => {
       wordCorrect: 0, idiomCorrect: 0,
       ships: [],                   // 配属済み軍艦ID
       shipLastAward: null,         // 最後に艦を配属した日（1日1隻制限）
-      lv3Mastered: [],             // Lv3クリア済みの項目ID（レア艦解放の原資）
+      lv3Mastered: [],             // Lv2クリア済みの項目ID（レア艦解放の原資）※フィールド名は後方互換のため維持
       history: [],                 // {date, correct, wrong, done}
     };
   }
@@ -151,7 +151,7 @@ const Rewards = (() => {
     return null;
   }
 
-  // Lv3クリア累計n語で解放されるべきレア艦の数
+  // Lv2クリア累計n語で解放されるべきレア艦の数
   function entitledRares(masteredCount) {
     if (masteredCount < RARE_FIRST) return 0;
     return Math.min(FLEET.length - REGULAR_COUNT, Math.floor((masteredCount - RARE_FIRST) / RARE_STEP) + 1);
@@ -184,7 +184,7 @@ const Rewards = (() => {
     return unlocked;
   }
 
-  // Lv3クリア記録（重複なし）。戻り値=解放されたレア艦の配列
+  // Lv2クリア記録（重複なし）。戻り値=解放されたレア艦の配列
   function recordLv3Clear(p, id) {
     if (p.lv3Mastered.includes(id)) return [];
     p.lv3Mastered.push(id);
@@ -240,9 +240,9 @@ const Rewards = (() => {
     return ev;
   }
 
-  // Lv別報酬: Lv1=10枚 Lv2=15枚 Lv3=20枚（×ストリーク倍率）
-  const LV_COINS = [0, 10, 15, 20];
-  const LV_XP = [0, 3, 4, 6];
+  // Lv別報酬: Lv1=15枚 Lv2=20枚（×ストリーク倍率）
+  const LV_COINS = [0, 15, 20];
+  const LV_XP = [0, 4, 6];
 
   function onAnswer(p, isCorrect, kind, lv = 1) {
     if (isCorrect) {
@@ -270,7 +270,7 @@ const Rewards = (() => {
     if (p.history.length > 60) p.history.shift();
     let awarded = null;
     if (p.shipLastAward !== today) {
-      // 完走配属は通常艦（駆逐/軽巡/重巡）のみ。レア艦はLv3クリア専用
+      // 完走配属は通常艦（駆逐/軽巡/重巡）のみ。レア艦はLv2クリア専用
       awarded = nextRegularShip(p);
       if (awarded) {
         p.ships.push(awarded.id);

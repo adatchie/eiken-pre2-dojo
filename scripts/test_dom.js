@@ -92,11 +92,10 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   const q1Meaning = $("q-meaning").textContent;
   check("問題表示（種別）", q1Kind.includes("単語") || q1Kind.includes("熟語"));
   check("問題表示（意味あり）", q1Meaning.length > 0);
-  check("Lvバッジ表示（新規はLv1）", q1Kind.includes("Lv1"));
-  check("Lv1書き写し: 辞書形ラベル+go out表示", $("q-transcript").style.display !== "none" && $("q-transcript").textContent.includes("辞書形") && $("q-transcript").textContent.includes("go out"));
-  check("Lv1熟語: 例文ハイライト表示(went out)", $("q-example").querySelector(".hl") && $("q-example").querySelector(".hl").textContent.includes("went out"));
-  check("Lv1熟語: カードが例文優先レイアウト", $("question-card").classList.contains("lv1-idiom"));
-  check("Lv1熟語ヒント表示", $("q-hint").textContent.includes("例文を先に読んで"));
+  check("Lvバッジ表示（新規はLv1 一部表示）", q1Kind.includes("Lv1 一部表示"));
+  check("書き写し廃止: 答え表示要素が撤去済み", window.document.getElementById("q-transcript") === null);
+  check("Lv1熟語: 例文は空所化（答えが出ていない）", $("q-example").querySelector(".blank") && !$("q-example").textContent.includes("went out"));
+  check("Lv1ヒント: 頭文字ヒント", $("q-hint").textContent.includes("ヒント: g_ o__"));
   check("タイマー表示", /^\d+$/.test($("timer").textContent));
   check("進捗表示", /\d+\/\d+/.test($("progress-mini").textContent));
 
@@ -182,7 +181,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   check("軍艦図鑑へ", $("screen-cards").style.display !== "none");
   check("軍艦60隻表示", window.document.querySelectorAll(".card-item").length === 60);
   check("レア艦タグ表示", $("cards-grid").textContent.includes("レア"));
-  check("レア解放条件表示", $("cards-grid").textContent.includes("Lv3クリア"));
+  check("レア解放条件表示", $("cards-grid").textContent.includes("Lv2クリア"));
 
   // --- モーダル（OKで閉じる） ---
   $("btn-cards-back").click();
