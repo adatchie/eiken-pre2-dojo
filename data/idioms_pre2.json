@@ -1,0 +1,4081 @@
+{
+ "version": 1,
+ "grade": "eiken-pre2",
+ "title": "英検準2級 頻出熟語",
+ "note": "複数Webソース（準2級過去問分析・でる順パス単準拠リスト等）を突合して作成。tier A=高頻出 B=中頻出 C=補強(2級重複含む)。",
+ "items": [
+  {
+   "id": "idiom-0001",
+   "en": "go out",
+   "ja": "外出する；（食事に）出かける",
+   "ex": "We went out for dinner last night.",
+   "cat": "go",
+   "tier": "A",
+   "src": [
+    "kimini",
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0002",
+   "en": "go over",
+   "ja": "～を詳しく調べる",
+   "ex": "Let's go over the plan again.",
+   "cat": "go",
+   "tier": "A",
+   "src": [
+    "kimini",
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0003",
+   "en": "go on",
+   "ja": "続ける；起こる",
+   "ex": "Please go on reading the book.",
+   "cat": "go",
+   "tier": "A",
+   "src": [
+    "ankG2",
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0004",
+   "en": "go ahead",
+   "ja": "どんどん進む；始める",
+   "ex": "You can go ahead and eat.",
+   "cat": "go",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0005",
+   "en": "go by",
+   "ja": "（時が）経過する",
+   "ex": "Time goes by fast.",
+   "cat": "go",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0006",
+   "en": "go off",
+   "ja": "（警報・爆弾が）鳴る、爆発する",
+   "ex": "The alarm went off at six.",
+   "cat": "go",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0007",
+   "en": "go into",
+   "ja": "～に入る；（職業に）就く",
+   "ex": "He went into the room.",
+   "cat": "go",
+   "tier": "B",
+   "src": [
+    "ankG2",
+    "stud"
+   ]
+  },
+  {
+   "id": "idiom-0008",
+   "en": "go through",
+   "ja": "～を経験する；通過する",
+   "ex": "She went through a hard time.",
+   "cat": "go",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0009",
+   "en": "go wrong",
+   "ja": "失敗する；調子が悪い",
+   "ex": "Don't worry, nothing will go wrong.",
+   "cat": "go",
+   "tier": "A",
+   "src": [
+    "aeon",
+    "qq"
+   ]
+  },
+  {
+   "id": "idiom-0010",
+   "en": "go for a walk",
+   "ja": "散歩に行く",
+   "ex": "My grandfather goes for a walk every morning.",
+   "cat": "go",
+   "tier": "B",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0011",
+   "en": "go on a tour",
+   "ja": "ツアーに行く",
+   "ex": "They went on a tour of Kyoto.",
+   "cat": "go",
+   "tier": "B",
+   "src": [
+    "kimini"
+   ]
+  },
+  {
+   "id": "idiom-0012",
+   "en": "come across",
+   "ja": "～に偶然出会う",
+   "ex": "I came across an old photo.",
+   "cat": "come",
+   "tier": "A",
+   "src": [
+    "ankG2",
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0013",
+   "en": "come from",
+   "ja": "～の出身である",
+   "ex": "She comes from Canada.",
+   "cat": "come",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0014",
+   "en": "come up with",
+   "ja": "～を思いつく",
+   "ex": "I can't come up with any ideas right now.",
+   "cat": "come",
+   "tier": "A",
+   "src": [
+    "aeon",
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0015",
+   "en": "come out",
+   "ja": "（ニュースなどが）明らかになる",
+   "ex": "The truth finally came out.",
+   "cat": "come",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0016",
+   "en": "come about",
+   "ja": "起こる",
+   "ex": "How did this come about?",
+   "cat": "come",
+   "tier": "C",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0017",
+   "en": "come to do",
+   "ja": "～するようになる",
+   "ex": "I came to like English.",
+   "cat": "come",
+   "tier": "B",
+   "src": [
+    "ankG2",
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0018",
+   "en": "come true",
+   "ja": "（夢などが）実現する",
+   "ex": "Her dream came true.",
+   "cat": "come",
+   "tier": "A",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0019",
+   "en": "come to an end",
+   "ja": "終わる",
+   "ex": "The festival came to an end.",
+   "cat": "come",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0020",
+   "en": "come back",
+   "ja": "戻ってくる",
+   "ex": "Come back soon!",
+   "cat": "come",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0021",
+   "en": "come down with",
+   "ja": "～（病気）にかかる",
+   "ex": "He came down with a cold.",
+   "cat": "come",
+   "tier": "C",
+   "src": [
+    "cheer"
+   ]
+  },
+  {
+   "id": "idiom-0022",
+   "en": "take advantage of",
+   "ja": "～を利用する",
+   "ex": "You should take advantage of the opportunity.",
+   "cat": "take",
+   "tier": "A",
+   "src": [
+    "best",
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0023",
+   "en": "take in",
+   "ja": "～を理解する；受け入れる",
+   "ex": "The store takes in returns for up to 30 days.",
+   "cat": "take",
+   "tier": "A",
+   "src": [
+    "aeon",
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0024",
+   "en": "take A for B",
+   "ja": "AをBだと思い込む",
+   "ex": "I took him for his brother.",
+   "cat": "take",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0025",
+   "en": "take over",
+   "ja": "～を引き継ぐ",
+   "ex": "She took over the company.",
+   "cat": "take",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0026",
+   "en": "take the place of",
+   "ja": "～の代わりをする",
+   "ex": "Nothing can take the place of water.",
+   "cat": "take",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0027",
+   "en": "take it easy",
+   "ja": "楽にやる、のんびりする",
+   "ex": "Take it easy today.",
+   "cat": "take",
+   "tier": "A",
+   "src": [
+    "qq",
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0028",
+   "en": "take A for granted",
+   "ja": "～を当然のことと思う",
+   "ex": "Don't take your family for granted.",
+   "cat": "take",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0029",
+   "en": "take place",
+   "ja": "行われる、起こる",
+   "ex": "The fireworks celebration will take place on Monday.",
+   "cat": "take",
+   "tier": "A",
+   "src": [
+    "aeon",
+    "ankG2",
+    "cheer"
+   ]
+  },
+  {
+   "id": "idiom-0030",
+   "en": "take one's time",
+   "ja": "ゆっくりやる",
+   "ex": "Take your time. There's no hurry.",
+   "cat": "take",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0031",
+   "en": "take a look at",
+   "ja": "～を見る",
+   "ex": "Take a look at this picture.",
+   "cat": "take",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0032",
+   "en": "take up",
+   "ja": "（場所・時間を）占める；始める",
+   "ex": "This desk takes up too much space.",
+   "cat": "take",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0033",
+   "en": "take care of",
+   "ja": "～の世話をする；処理する",
+   "ex": "I'll take care of the paperwork for you.",
+   "cat": "take",
+   "tier": "A",
+   "src": [
+    "aeon",
+    "kimini",
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0034",
+   "en": "take part in",
+   "ja": "～に参加する",
+   "ex": "He took part in the basketball club.",
+   "cat": "take",
+   "tier": "A",
+   "src": [
+    "best",
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0035",
+   "en": "take off",
+   "ja": "（服を）脱ぐ；（飛行機が）離陸する",
+   "ex": "Please take off your shoes.",
+   "cat": "take",
+   "tier": "A",
+   "src": [
+    "ankG2",
+    "jump"
+   ]
+  },
+  {
+   "id": "idiom-0036",
+   "en": "take pride in",
+   "ja": "～を誇りに思う",
+   "ex": "We take pride in our school.",
+   "cat": "take",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0037",
+   "en": "take away",
+   "ja": "～を持ち去る",
+   "ex": "Please take away the trash.",
+   "cat": "take",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0038",
+   "en": "take a break",
+   "ja": "休憩する",
+   "ex": "Let's take a break now.",
+   "cat": "take",
+   "tier": "A",
+   "src": [
+    "qq"
+   ]
+  },
+  {
+   "id": "idiom-0039",
+   "en": "take action",
+   "ja": "行動を起こす",
+   "ex": "She took action immediately.",
+   "cat": "take",
+   "tier": "A",
+   "src": [
+    "kimini",
+    "cheer"
+   ]
+  },
+  {
+   "id": "idiom-0040",
+   "en": "take a seat",
+   "ja": "座る",
+   "ex": "Please take a seat.",
+   "cat": "take",
+   "tier": "A",
+   "src": [
+    "kimini"
+   ]
+  },
+  {
+   "id": "idiom-0041",
+   "en": "take turns",
+   "ja": "交代でする",
+   "ex": "We took turns driving.",
+   "cat": "take",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0042",
+   "en": "take notes",
+   "ja": "メモを取る",
+   "ex": "She takes notes in every class.",
+   "cat": "take",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0043",
+   "en": "bring in",
+   "ja": "（賃金・金額を）稼ぐ",
+   "ex": "The shop brings in a lot of money.",
+   "cat": "bring",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0044",
+   "en": "bring up",
+   "ja": "（子供を）育てる",
+   "ex": "She brought up three children.",
+   "cat": "bring",
+   "tier": "A",
+   "src": [
+    "ankG2",
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0045",
+   "en": "bring back",
+   "ja": "～を戻す、持ち帰る",
+   "ex": "Please bring back my book.",
+   "cat": "bring",
+   "tier": "A",
+   "src": [
+    "kimini",
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0046",
+   "en": "bring out",
+   "ja": "～をはっきり出す",
+   "ex": "The salt brings out the flavor.",
+   "cat": "bring",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0047",
+   "en": "bring oneself to do",
+   "ja": "～する気になる",
+   "ex": "I couldn't bring myself to tell her.",
+   "cat": "bring",
+   "tier": "C",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0048",
+   "en": "bring about",
+   "ja": "～を引き起こす",
+   "ex": "The new law brought about big changes.",
+   "cat": "bring",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0049",
+   "en": "bring A to life",
+   "ja": "Aを生き返らせる",
+   "ex": "The story brings history to life.",
+   "cat": "bring",
+   "tier": "C",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0050",
+   "en": "bring A to an end",
+   "ja": "Aを終わらせる",
+   "ex": "We brought the meeting to an end.",
+   "cat": "bring",
+   "tier": "C",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0051",
+   "en": "give up",
+   "ja": "あきらめる",
+   "ex": "Never give up!",
+   "cat": "give",
+   "tier": "A",
+   "src": [
+    "ankG2",
+    "jump"
+   ]
+  },
+  {
+   "id": "idiom-0052",
+   "en": "give away",
+   "ja": "～をただで与える",
+   "ex": "She gave away her old clothes.",
+   "cat": "give",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0053",
+   "en": "give out",
+   "ja": "～を配る",
+   "ex": "The teacher gave out the test papers.",
+   "cat": "give",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0054",
+   "en": "give in",
+   "ja": "屈する、降参する",
+   "ex": "He finally gave in.",
+   "cat": "give",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0055",
+   "en": "give A a hand",
+   "ja": "Aを手伝う",
+   "ex": "Can you give me a hand?",
+   "cat": "give",
+   "tier": "A",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0056",
+   "en": "give rise to",
+   "ja": "～を引き起こす",
+   "ex": "The accident gave rise to many problems.",
+   "cat": "give",
+   "tier": "C",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0057",
+   "en": "give birth to",
+   "ja": "～を産む",
+   "ex": "She gave birth to a baby girl.",
+   "cat": "give",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0058",
+   "en": "give off",
+   "ja": "（におい・光を）発する",
+   "ex": "The flowers were giving off a sweet fragrance.",
+   "cat": "give",
+   "tier": "A",
+   "src": [
+    "aeon",
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0059",
+   "en": "give A a ride",
+   "ja": "Aを車に乗せる",
+   "ex": "My father gave me a ride to school.",
+   "cat": "give",
+   "tier": "B",
+   "src": [
+    "kimini"
+   ]
+  },
+  {
+   "id": "idiom-0060",
+   "en": "get to",
+   "ja": "～に到着する",
+   "ex": "How can I get to the station?",
+   "cat": "get",
+   "tier": "A",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0061",
+   "en": "get along with",
+   "ja": "～と仲良くやっていく",
+   "ex": "I get along with my classmates.",
+   "cat": "get",
+   "tier": "A",
+   "src": [
+    "ankG2",
+    "cheer"
+   ]
+  },
+  {
+   "id": "idiom-0062",
+   "en": "get on",
+   "ja": "（バス・電車に）乗る",
+   "ex": "We got on the bus.",
+   "cat": "get",
+   "tier": "A",
+   "src": [
+    "kimini",
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0063",
+   "en": "get off",
+   "ja": "（バス・電車から）降りる",
+   "ex": "I get off at the next station.",
+   "cat": "get",
+   "tier": "A",
+   "src": [
+    "kimini",
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0064",
+   "en": "get in",
+   "ja": "～に入る、乗り込む",
+   "ex": "Get in the car.",
+   "cat": "get",
+   "tier": "A",
+   "src": [
+    "kimini",
+    "best"
+   ]
+  },
+  {
+   "id": "idiom-0065",
+   "en": "get out",
+   "ja": "～から出る",
+   "ex": "Get out of the room.",
+   "cat": "get",
+   "tier": "B",
+   "src": [
+    "kimini"
+   ]
+  },
+  {
+   "id": "idiom-0066",
+   "en": "get rid of",
+   "ja": "～を処分する",
+   "ex": "We should get rid of that old carpet.",
+   "cat": "get",
+   "tier": "A",
+   "src": [
+    "cheer",
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0067",
+   "en": "get through",
+   "ja": "～を切り抜ける",
+   "ex": "We got through the hard winter.",
+   "cat": "get",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0068",
+   "en": "get over",
+   "ja": "～から立ち直る",
+   "ex": "She got over her illness.",
+   "cat": "get",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0069",
+   "en": "get lost",
+   "ja": "道に迷う",
+   "ex": "I got lost in the city.",
+   "cat": "get",
+   "tier": "A",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0070",
+   "en": "get ready for",
+   "ja": "～の準備をする",
+   "ex": "Get ready for school.",
+   "cat": "get",
+   "tier": "A",
+   "src": [
+    "kimini"
+   ]
+  },
+  {
+   "id": "idiom-0071",
+   "en": "get in shape",
+   "ja": "体を鍛える、体調を整える",
+   "ex": "I want to get in shape.",
+   "cat": "get",
+   "tier": "B",
+   "src": [
+    "qq"
+   ]
+  },
+  {
+   "id": "idiom-0072",
+   "en": "get up",
+   "ja": "起きる",
+   "ex": "I get up at six every day.",
+   "cat": "get",
+   "tier": "A",
+   "src": [
+    "jump"
+   ]
+  },
+  {
+   "id": "idiom-0073",
+   "en": "get back",
+   "ja": "戻ってくる",
+   "ex": "She got back home late.",
+   "cat": "get",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0074",
+   "en": "get together",
+   "ja": "集まる",
+   "ex": "Let's get together next week.",
+   "cat": "get",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0075",
+   "en": "have on",
+   "ja": "（服を）身に着けている",
+   "ex": "She had a red hat on.",
+   "cat": "have",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0076",
+   "en": "have access to",
+   "ja": "～を利用できる",
+   "ex": "Students have access to the library.",
+   "cat": "have",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0077",
+   "en": "have no idea",
+   "ja": "全く分からない",
+   "ex": "I have no idea.",
+   "cat": "have",
+   "tier": "A",
+   "src": [
+    "ankG2",
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0078",
+   "en": "have A in common",
+   "ja": "Aを共通に持つ",
+   "ex": "We have a lot in common.",
+   "cat": "have",
+   "tier": "A",
+   "src": [
+    "ankG2",
+    "kimini"
+   ]
+  },
+  {
+   "id": "idiom-0079",
+   "en": "have a good time",
+   "ja": "楽しい時を過ごす",
+   "ex": "We had a good time at the party.",
+   "cat": "have",
+   "tier": "A",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0080",
+   "en": "have nothing to do with",
+   "ja": "～と関係がない",
+   "ex": "It has nothing to do with me.",
+   "cat": "have",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0081",
+   "en": "have something to do with",
+   "ja": "～と関係がある",
+   "ex": "This has something to do with him.",
+   "cat": "have",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0082",
+   "en": "have A do",
+   "ja": "Aに～させる",
+   "ex": "My mother had me wash the dishes.",
+   "cat": "have",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0083",
+   "en": "have a sore throat",
+   "ja": "のどが痛む",
+   "ex": "I have a sore throat.",
+   "cat": "have",
+   "tier": "A",
+   "src": [
+    "kimini"
+   ]
+  },
+  {
+   "id": "idiom-0084",
+   "en": "have trouble with",
+   "ja": "～で困っている",
+   "ex": "She's having trouble with her computer.",
+   "cat": "have",
+   "tier": "A",
+   "src": [
+    "aeon"
+   ]
+  },
+  {
+   "id": "idiom-0085",
+   "en": "keep A from doing",
+   "ja": "Aが～するのを防ぐ",
+   "ex": "The rain kept us from going out.",
+   "cat": "keep",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0086",
+   "en": "keep track of",
+   "ja": "～を見失わないようにする",
+   "ex": "Keep track of your money.",
+   "cat": "keep",
+   "tier": "C",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0087",
+   "en": "keep up with",
+   "ja": "～についていく",
+   "ex": "It's hard to keep up with all the latest technology trends.",
+   "cat": "keep",
+   "tier": "A",
+   "src": [
+    "aeon",
+    "kimini",
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0088",
+   "en": "keep on",
+   "ja": "～し続ける",
+   "ex": "He kept on working.",
+   "cat": "keep",
+   "tier": "A",
+   "src": [
+    "kimini",
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0089",
+   "en": "keep A in mind",
+   "ja": "～を覚えておく",
+   "ex": "Keep this rule in mind.",
+   "cat": "keep",
+   "tier": "A",
+   "src": [
+    "qq",
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0090",
+   "en": "keep in touch with",
+   "ja": "～と連絡を取り合う",
+   "ex": "I keep in touch with my old friends.",
+   "cat": "keep",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0091",
+   "en": "keep pace with",
+   "ja": "～に遅れないようについていく",
+   "ex": "Keep pace with the times.",
+   "cat": "keep",
+   "tier": "C",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0092",
+   "en": "keep out",
+   "ja": "～を入れない",
+   "ex": "Keep out of this room.",
+   "cat": "keep",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0093",
+   "en": "keep from",
+   "ja": "～を差し控える",
+   "ex": "I couldn't keep from laughing.",
+   "cat": "keep",
+   "tier": "C",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0094",
+   "en": "keep to",
+   "ja": "～から外れないでいる",
+   "ex": "Keep to the left.",
+   "cat": "keep",
+   "tier": "C",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0095",
+   "en": "keep away",
+   "ja": "近づかない",
+   "ex": "Keep away from the fire.",
+   "cat": "keep",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0096",
+   "en": "keep A to oneself",
+   "ja": "～を秘密にしておく",
+   "ex": "Keep this secret to yourself.",
+   "cat": "keep",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0097",
+   "en": "hold on",
+   "ja": "電話を切らないで待つ；持ちこたえる",
+   "ex": "Hold on a second.",
+   "cat": "hold",
+   "tier": "A",
+   "src": [
+    "kimini",
+    "best"
+   ]
+  },
+  {
+   "id": "idiom-0098",
+   "en": "hold up",
+   "ja": "～を支える",
+   "ex": "The pillars hold up the roof.",
+   "cat": "hold",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0099",
+   "en": "hold back",
+   "ja": "～を引き止める；抑える",
+   "ex": "She held back her tears.",
+   "cat": "hold",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0100",
+   "en": "hold down",
+   "ja": "（価格などを）抑制する",
+   "ex": "We must hold down costs.",
+   "cat": "hold",
+   "tier": "C",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0101",
+   "en": "hold one's breath",
+   "ja": "息を止める",
+   "ex": "I held my breath and waited.",
+   "cat": "hold",
+   "tier": "B",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0102",
+   "en": "put on",
+   "ja": "～を着用する",
+   "ex": "Put on your coat.",
+   "cat": "put",
+   "tier": "A",
+   "src": [
+    "kimini",
+    "qq",
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0103",
+   "en": "put together",
+   "ja": "～をまとめる",
+   "ex": "She put together a great plan.",
+   "cat": "put",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0104",
+   "en": "put forward",
+   "ja": "（意見を）提案する",
+   "ex": "He put forward a new idea.",
+   "cat": "put",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0105",
+   "en": "put down",
+   "ja": "～を書き留める",
+   "ex": "Put down your name.",
+   "cat": "put",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0106",
+   "en": "put up with",
+   "ja": "～を我慢する",
+   "ex": "I cannot put up with this noise.",
+   "cat": "put",
+   "tier": "A",
+   "src": [
+    "best",
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0107",
+   "en": "put an end to",
+   "ja": "～を終わらせる",
+   "ex": "We must put an end to this.",
+   "cat": "put",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0108",
+   "en": "put A into B",
+   "ja": "AをB（他国語）に翻訳する",
+   "ex": "Put this sentence into Japanese.",
+   "cat": "put",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0109",
+   "en": "put off",
+   "ja": "～を延期する",
+   "ex": "The rain put off the soccer tournament.",
+   "cat": "put",
+   "tier": "A",
+   "src": [
+    "best",
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0110",
+   "en": "put away",
+   "ja": "～を片付ける",
+   "ex": "Put away your books.",
+   "cat": "put",
+   "tier": "A",
+   "src": [
+    "aeon",
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0111",
+   "en": "put out",
+   "ja": "（火を）消す",
+   "ex": "The firefighters put out the fire.",
+   "cat": "put",
+   "tier": "A",
+   "src": [
+    "ankG2",
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0112",
+   "en": "put up",
+   "ja": "～を掲示する；泊める",
+   "ex": "We put up a tent.",
+   "cat": "put",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0113",
+   "en": "set up",
+   "ja": "～を設立する",
+   "ex": "They set up a new company.",
+   "cat": "set",
+   "tier": "A",
+   "src": [
+    "kimini",
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0114",
+   "en": "set aside",
+   "ja": "（金・時間を）取っておく",
+   "ex": "I set aside some money every month.",
+   "cat": "set",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0115",
+   "en": "set out",
+   "ja": "出発する",
+   "ex": "We set out early in the morning.",
+   "cat": "set",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0116",
+   "en": "set in",
+   "ja": "（好ましくないことが）始まる",
+   "ex": "Winter has set in.",
+   "cat": "set",
+   "tier": "C",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0117",
+   "en": "set off",
+   "ja": "～を引き起こす；出発する",
+   "ex": "The noise set off the alarm.",
+   "cat": "set",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0118",
+   "en": "set A free",
+   "ja": "Aを自由にする",
+   "ex": "They set the bird free.",
+   "cat": "set",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0119",
+   "en": "make sense",
+   "ja": "道理にかなう、意味が通じる",
+   "ex": "Your answer makes sense.",
+   "cat": "make",
+   "tier": "A",
+   "src": [
+    "kimini",
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0120",
+   "en": "make a difference",
+   "ja": "重要である、違いを生む",
+   "ex": "Your help makes a big difference.",
+   "cat": "make",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0121",
+   "en": "make one's way",
+   "ja": "進む",
+   "ex": "We made our way through the crowd.",
+   "cat": "make",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0122",
+   "en": "make a living",
+   "ja": "生計を立てる",
+   "ex": "He makes a living as a musician.",
+   "cat": "make",
+   "tier": "A",
+   "src": [
+    "aeon",
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0123",
+   "en": "make use of",
+   "ja": "～を利用する",
+   "ex": "Make use of the library.",
+   "cat": "make",
+   "tier": "A",
+   "src": [
+    "best",
+    "ankA"
+   ]
+  },
+  {
+   "id": "idiom-0124",
+   "en": "make fun of",
+   "ja": "～をからかう",
+   "ex": "Don't make fun of others.",
+   "cat": "make",
+   "tier": "A",
+   "src": [
+    "best",
+    "ankA"
+   ]
+  },
+  {
+   "id": "idiom-0125",
+   "en": "make sense of",
+   "ja": "～を理解する",
+   "ex": "I can't make sense of this poem.",
+   "cat": "make",
+   "tier": "B",
+   "src": [
+    "best"
+   ]
+  },
+  {
+   "id": "idiom-0126",
+   "en": "make out",
+   "ja": "～を理解する；見分ける",
+   "ex": "I'm trying to make out how to solve this puzzle.",
+   "cat": "make",
+   "tier": "A",
+   "src": [
+    "aeon",
+    "best"
+   ]
+  },
+  {
+   "id": "idiom-0127",
+   "en": "make up one's mind",
+   "ja": "決心する",
+   "ex": "She made up her mind to study abroad.",
+   "cat": "make",
+   "tier": "A",
+   "src": [
+    "kimini",
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0128",
+   "en": "make up for",
+   "ja": "～を埋め合わせる",
+   "ex": "He worked hard to make up for lost time.",
+   "cat": "make",
+   "tier": "B",
+   "src": [
+    "kimini"
+   ]
+  },
+  {
+   "id": "idiom-0129",
+   "en": "make a mistake",
+   "ja": "間違いを犯す",
+   "ex": "Don't worry if you make a mistake.",
+   "cat": "make",
+   "tier": "A",
+   "src": [
+    "aeon"
+   ]
+  },
+  {
+   "id": "idiom-0130",
+   "en": "make a reservation",
+   "ja": "予約をする",
+   "ex": "I'd like to make a reservation for two.",
+   "cat": "make",
+   "tier": "A",
+   "src": [
+    "aeon"
+   ]
+  },
+  {
+   "id": "idiom-0131",
+   "en": "make money",
+   "ja": "お金を稼ぐ",
+   "ex": "She makes money by freelancing.",
+   "cat": "make",
+   "tier": "A",
+   "src": [
+    "aeon",
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0132",
+   "en": "make progress",
+   "ja": "進歩する",
+   "ex": "You are making good progress.",
+   "cat": "make",
+   "tier": "A",
+   "src": [
+    "aeon",
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0133",
+   "en": "make an appointment with",
+   "ja": "～と約束をする",
+   "ex": "I made an appointment with the doctor.",
+   "cat": "make",
+   "tier": "A",
+   "src": [
+    "kimini"
+   ]
+  },
+  {
+   "id": "idiom-0134",
+   "en": "make an effort",
+   "ja": "努力する",
+   "ex": "Make an effort to be on time.",
+   "cat": "make",
+   "tier": "B",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0135",
+   "en": "make it",
+   "ja": "なんとか間に合う",
+   "ex": "We made it just in time.",
+   "cat": "make",
+   "tier": "B",
+   "src": [
+    "stud"
+   ]
+  },
+  {
+   "id": "idiom-0136",
+   "en": "make the most of",
+   "ja": "～を最大限に利用する",
+   "ex": "Make the most of your free time.",
+   "cat": "make",
+   "tier": "B",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0137",
+   "en": "look after",
+   "ja": "～の世話をする",
+   "ex": "I have to look after my little brother.",
+   "cat": "look",
+   "tier": "A",
+   "src": [
+    "kimini",
+    "qq",
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0138",
+   "en": "look at",
+   "ja": "～を見る",
+   "ex": "Look at the blackboard.",
+   "cat": "look",
+   "tier": "A",
+   "src": [
+    "kimini"
+   ]
+  },
+  {
+   "id": "idiom-0139",
+   "en": "look for",
+   "ja": "～を探す",
+   "ex": "I'm looking for my keys.",
+   "cat": "look",
+   "tier": "A",
+   "src": [
+    "kimini"
+   ]
+  },
+  {
+   "id": "idiom-0140",
+   "en": "look out",
+   "ja": "用心する",
+   "ex": "Look out! A car is coming.",
+   "cat": "look",
+   "tier": "A",
+   "src": [
+    "kimini"
+   ]
+  },
+  {
+   "id": "idiom-0141",
+   "en": "look over",
+   "ja": "～に目を通す",
+   "ex": "Please look over my report.",
+   "cat": "look",
+   "tier": "A",
+   "src": [
+    "kimini"
+   ]
+  },
+  {
+   "id": "idiom-0142",
+   "en": "look through",
+   "ja": "～をざっと調べる",
+   "ex": "I looked through the magazine.",
+   "cat": "look",
+   "tier": "A",
+   "src": [
+    "kimini"
+   ]
+  },
+  {
+   "id": "idiom-0143",
+   "en": "look forward to",
+   "ja": "～を楽しみにしている",
+   "ex": "I'm looking forward to meeting you next week.",
+   "cat": "look",
+   "tier": "A",
+   "src": [
+    "aeon",
+    "jump"
+   ]
+  },
+  {
+   "id": "idiom-0144",
+   "en": "look up",
+   "ja": "（単語などを）調べる",
+   "ex": "Can you look up the meaning of this word?",
+   "cat": "look",
+   "tier": "A",
+   "src": [
+    "aeon"
+   ]
+  },
+  {
+   "id": "idiom-0145",
+   "en": "look up to",
+   "ja": "～を尊敬する",
+   "ex": "He looks up to his boss.",
+   "cat": "look",
+   "tier": "B",
+   "src": [
+    "best",
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0146",
+   "en": "look down on",
+   "ja": "～を見下す",
+   "ex": "Don't look down on others.",
+   "cat": "look",
+   "tier": "B",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0147",
+   "en": "look into",
+   "ja": "～を調べる",
+   "ex": "The police looked into the matter.",
+   "cat": "look",
+   "tier": "B",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0148",
+   "en": "look like",
+   "ja": "～のように見える",
+   "ex": "It looks like rain.",
+   "cat": "look",
+   "tier": "B",
+   "src": [
+    "kimini"
+   ]
+  },
+  {
+   "id": "idiom-0149",
+   "en": "be aware of",
+   "ja": "～に気づいている",
+   "ex": "The dog is aware of me.",
+   "cat": "be",
+   "tier": "A",
+   "src": [
+    "best",
+    "kimini"
+   ]
+  },
+  {
+   "id": "idiom-0150",
+   "en": "be sure to do",
+   "ja": "必ず～する",
+   "ex": "Be sure to lock the door.",
+   "cat": "be",
+   "tier": "A",
+   "src": [
+    "best",
+    "ankA"
+   ]
+  },
+  {
+   "id": "idiom-0151",
+   "en": "be used to doing",
+   "ja": "～するのに慣れている",
+   "ex": "He is used to running a long distance.",
+   "cat": "be",
+   "tier": "A",
+   "src": [
+    "best",
+    "kimini"
+   ]
+  },
+  {
+   "id": "idiom-0152",
+   "en": "be no use doing",
+   "ja": "～しても無駄である",
+   "ex": "It is no use crying.",
+   "cat": "be",
+   "tier": "B",
+   "src": [
+    "best"
+   ]
+  },
+  {
+   "id": "idiom-0153",
+   "en": "be willing to do",
+   "ja": "進んで～する",
+   "ex": "She is willing to clean her room.",
+   "cat": "be",
+   "tier": "A",
+   "src": [
+    "best"
+   ]
+  },
+  {
+   "id": "idiom-0154",
+   "en": "be interested in",
+   "ja": "～に興味がある",
+   "ex": "She is interested in learning Japanese.",
+   "cat": "be",
+   "tier": "A",
+   "src": [
+    "aeon",
+    "qq"
+   ]
+  },
+  {
+   "id": "idiom-0155",
+   "en": "be made up of",
+   "ja": "～で構成される",
+   "ex": "The committee is made up of experts.",
+   "cat": "be",
+   "tier": "A",
+   "src": [
+    "aeon"
+   ]
+  },
+  {
+   "id": "idiom-0156",
+   "en": "be good at",
+   "ja": "～が得意である",
+   "ex": "He is good at playing soccer.",
+   "cat": "be",
+   "tier": "A",
+   "src": [
+    "qq"
+   ]
+  },
+  {
+   "id": "idiom-0157",
+   "en": "be poor at",
+   "ja": "～が苦手である",
+   "ex": "I am poor at math.",
+   "cat": "be",
+   "tier": "A",
+   "src": [
+    "kimini"
+   ]
+  },
+  {
+   "id": "idiom-0158",
+   "en": "be afraid of",
+   "ja": "～を怖がる",
+   "ex": "She is afraid of dogs.",
+   "cat": "be",
+   "tier": "A",
+   "src": [
+    "qq"
+   ]
+  },
+  {
+   "id": "idiom-0159",
+   "en": "be full of",
+   "ja": "～でいっぱいである",
+   "ex": "The box is full of toys.",
+   "cat": "be",
+   "tier": "A",
+   "src": [
+    "qq",
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0160",
+   "en": "be sick of",
+   "ja": "～に飽き飽きする",
+   "ex": "I'm sick of this weather.",
+   "cat": "be",
+   "tier": "B",
+   "src": [
+    "qq"
+   ]
+  },
+  {
+   "id": "idiom-0161",
+   "en": "be tired of",
+   "ja": "～にうんざりしている",
+   "ex": "She is tired of his lies.",
+   "cat": "be",
+   "tier": "A",
+   "src": [
+    "kimini",
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0162",
+   "en": "be tired from",
+   "ja": "～で疲れている",
+   "ex": "I'm tired from the long walk.",
+   "cat": "be",
+   "tier": "A",
+   "src": [
+    "kimini"
+   ]
+  },
+  {
+   "id": "idiom-0163",
+   "en": "be ready for",
+   "ja": "～の用意ができている",
+   "ex": "Are you ready for the test?",
+   "cat": "be",
+   "tier": "A",
+   "src": [
+    "qq"
+   ]
+  },
+  {
+   "id": "idiom-0164",
+   "en": "be popular with",
+   "ja": "～に人気がある",
+   "ex": "This game is popular with students.",
+   "cat": "be",
+   "tier": "A",
+   "src": [
+    "kimini"
+   ]
+  },
+  {
+   "id": "idiom-0165",
+   "en": "be grateful for",
+   "ja": "～に感謝している",
+   "ex": "I'm grateful for your help.",
+   "cat": "be",
+   "tier": "A",
+   "src": [
+    "kimini"
+   ]
+  },
+  {
+   "id": "idiom-0166",
+   "en": "be out of the question",
+   "ja": "問題外である",
+   "ex": "Lying is out of the question.",
+   "cat": "be",
+   "tier": "A",
+   "src": [
+    "kimini",
+    "aeon"
+   ]
+  },
+  {
+   "id": "idiom-0167",
+   "en": "be unable to do",
+   "ja": "～することができない",
+   "ex": "He was unable to answer.",
+   "cat": "be",
+   "tier": "A",
+   "src": [
+    "kimini"
+   ]
+  },
+  {
+   "id": "idiom-0168",
+   "en": "be expected to do",
+   "ja": "～するよう期待される",
+   "ex": "You are expected to be on time.",
+   "cat": "be",
+   "tier": "A",
+   "src": [
+    "kimini"
+   ]
+  },
+  {
+   "id": "idiom-0169",
+   "en": "be about to do",
+   "ja": "～しようとしているところだ",
+   "ex": "I was just about to clean my room.",
+   "cat": "be",
+   "tier": "A",
+   "src": [
+    "cheer"
+   ]
+  },
+  {
+   "id": "idiom-0170",
+   "en": "be supposed to do",
+   "ja": "～することになっている",
+   "ex": "You are supposed to wear a uniform.",
+   "cat": "be",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0171",
+   "en": "be familiar with",
+   "ja": "～によく知っている",
+   "ex": "Are you familiar with this area?",
+   "cat": "be",
+   "tier": "B",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0172",
+   "en": "be proud of",
+   "ja": "～を誇りに思う",
+   "ex": "I'm proud of you.",
+   "cat": "be",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0173",
+   "en": "be rich in",
+   "ja": "～に富んでいる",
+   "ex": "This area is rich in nature.",
+   "cat": "be",
+   "tier": "B",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0174",
+   "en": "be short of",
+   "ja": "～が不足している",
+   "ex": "We are short of water.",
+   "cat": "be",
+   "tier": "B",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0175",
+   "en": "be free to do",
+   "ja": "自由に～してよい",
+   "ex": "You are free to ask questions.",
+   "cat": "be",
+   "tier": "B",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0176",
+   "en": "be connected with",
+   "ja": "～と関係がある",
+   "ex": "This case is connected with the accident.",
+   "cat": "be",
+   "tier": "B",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0177",
+   "en": "be in charge of",
+   "ja": "～を担当している",
+   "ex": "Who is in charge of this class?",
+   "cat": "be",
+   "tier": "A",
+   "src": [
+    "best",
+    "kimini"
+   ]
+  },
+  {
+   "id": "idiom-0178",
+   "en": "be free from",
+   "ja": "～がない",
+   "ex": "This drink is free from sugar.",
+   "cat": "be",
+   "tier": "C",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0179",
+   "en": "be to blame for",
+   "ja": "～の責任がある",
+   "ex": "He is to blame for the mistake.",
+   "cat": "be",
+   "tier": "C",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0180",
+   "en": "depend on",
+   "ja": "～次第である；頼る",
+   "ex": "The price depends on the size.",
+   "cat": "verb",
+   "tier": "A",
+   "src": [
+    "aeon",
+    "best"
+   ]
+  },
+  {
+   "id": "idiom-0181",
+   "en": "rely on",
+   "ja": "～を信頼する、頼る",
+   "ex": "You can rely on me.",
+   "cat": "verb",
+   "tier": "A",
+   "src": [
+    "kimini",
+    "jump"
+   ]
+  },
+  {
+   "id": "idiom-0182",
+   "en": "belong to",
+   "ja": "～に属する",
+   "ex": "This book belongs to me.",
+   "cat": "verb",
+   "tier": "A",
+   "src": [
+    "aeon"
+   ]
+  },
+  {
+   "id": "idiom-0183",
+   "en": "participate in",
+   "ja": "～に参加する",
+   "ex": "Many students participated in the event.",
+   "cat": "verb",
+   "tier": "A",
+   "src": [
+    "qq",
+    "jump"
+   ]
+  },
+  {
+   "id": "idiom-0184",
+   "en": "focus on",
+   "ja": "～に集中する",
+   "ex": "Focus on your homework.",
+   "cat": "verb",
+   "tier": "A",
+   "src": [
+    "qq",
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0185",
+   "en": "pay attention to",
+   "ja": "～に注意する",
+   "ex": "Pay attention to the teacher.",
+   "cat": "verb",
+   "tier": "A",
+   "src": [
+    "kimini",
+    "qq"
+   ]
+  },
+  {
+   "id": "idiom-0186",
+   "en": "pay for",
+   "ja": "～の費用を払う",
+   "ex": "I'll pay for the tickets.",
+   "cat": "verb",
+   "tier": "A",
+   "src": [
+    "kimini",
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0187",
+   "en": "wait for",
+   "ja": "～を待つ",
+   "ex": "I waited for the bus.",
+   "cat": "verb",
+   "tier": "A",
+   "src": [
+    "stud"
+   ]
+  },
+  {
+   "id": "idiom-0188",
+   "en": "care about",
+   "ja": "～に関心がある",
+   "ex": "She cares about the environment.",
+   "cat": "verb",
+   "tier": "A",
+   "src": [
+    "qq"
+   ]
+  },
+  {
+   "id": "idiom-0189",
+   "en": "worry about",
+   "ja": "～について心配する",
+   "ex": "Don't worry about the test.",
+   "cat": "verb",
+   "tier": "A",
+   "src": [
+    "qq"
+   ]
+  },
+  {
+   "id": "idiom-0190",
+   "en": "wonder about",
+   "ja": "～について知りたいと思う",
+   "ex": "I wonder about the future.",
+   "cat": "verb",
+   "tier": "B",
+   "src": [
+    "qq"
+   ]
+  },
+  {
+   "id": "idiom-0191",
+   "en": "think of",
+   "ja": "考える；思い出す",
+   "ex": "I can't think of his name right now.",
+   "cat": "verb",
+   "tier": "A",
+   "src": [
+    "aeon"
+   ]
+  },
+  {
+   "id": "idiom-0192",
+   "en": "hear from",
+   "ja": "～から便りがある",
+   "ex": "I heard from my pen pal.",
+   "cat": "verb",
+   "tier": "B",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0193",
+   "en": "suffer from",
+   "ja": "～に苦しむ",
+   "ex": "Her grandfather suffers from backache.",
+   "cat": "verb",
+   "tier": "A",
+   "src": [
+    "cheer"
+   ]
+  },
+  {
+   "id": "idiom-0194",
+   "en": "graduate from",
+   "ja": "～を卒業する",
+   "ex": "She graduated from high school.",
+   "cat": "verb",
+   "tier": "A",
+   "src": [
+    "kimini"
+   ]
+  },
+  {
+   "id": "idiom-0195",
+   "en": "consist of",
+   "ja": "～からなる",
+   "ex": "The team consists of ten players.",
+   "cat": "verb",
+   "tier": "B",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0196",
+   "en": "agree with",
+   "ja": "～に同意する",
+   "ex": "I agree with your opinion.",
+   "cat": "verb",
+   "tier": "B",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0197",
+   "en": "deal with",
+   "ja": "～に対処する",
+   "ex": "I will deal with the issue.",
+   "cat": "verb",
+   "tier": "B",
+   "src": [
+    "best",
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0198",
+   "en": "do without",
+   "ja": "～なしで済ます",
+   "ex": "My sister cannot do without her smartphone.",
+   "cat": "verb",
+   "tier": "A",
+   "src": [
+    "kimini",
+    "cheer"
+   ]
+  },
+  {
+   "id": "idiom-0199",
+   "en": "do away with",
+   "ja": "～を廃止する",
+   "ex": "The school did away with the rule.",
+   "cat": "verb",
+   "tier": "C",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0200",
+   "en": "add to",
+   "ja": "～に付け加える",
+   "ex": "The music added to our joy.",
+   "cat": "verb",
+   "tier": "B",
+   "src": [
+    "qq"
+   ]
+  },
+  {
+   "id": "idiom-0201",
+   "en": "ask for",
+   "ja": "～を頼む",
+   "ex": "He asked for help.",
+   "cat": "verb",
+   "tier": "B",
+   "src": [
+    "qq"
+   ]
+  },
+  {
+   "id": "idiom-0202",
+   "en": "run after",
+   "ja": "～を追いかける",
+   "ex": "The dog ran after the ball.",
+   "cat": "verb",
+   "tier": "A",
+   "src": [
+    "kimini"
+   ]
+  },
+  {
+   "id": "idiom-0203",
+   "en": "run out of",
+   "ja": "～を使い果たす",
+   "ex": "We ran out of milk.",
+   "cat": "verb",
+   "tier": "A",
+   "src": [
+    "qq",
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0204",
+   "en": "run over",
+   "ja": "～をひく",
+   "ex": "The car ran over a cat.",
+   "cat": "verb",
+   "tier": "B",
+   "src": [
+    "kimini"
+   ]
+  },
+  {
+   "id": "idiom-0205",
+   "en": "run into",
+   "ja": "～に偶然会う",
+   "ex": "I ran into my teacher at the mall.",
+   "cat": "verb",
+   "tier": "B",
+   "src": [
+    "cheer"
+   ]
+  },
+  {
+   "id": "idiom-0206",
+   "en": "search for",
+   "ja": "～を探す",
+   "ex": "They searched for the missing boy.",
+   "cat": "verb",
+   "tier": "B",
+   "src": [
+    "kimini"
+   ]
+  },
+  {
+   "id": "idiom-0207",
+   "en": "stand by",
+   "ja": "～を支援する",
+   "ex": "We will stand by you.",
+   "cat": "verb",
+   "tier": "B",
+   "src": [
+    "kimini",
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0208",
+   "en": "stand out",
+   "ja": "目立つ",
+   "ex": "Her red dress stood out.",
+   "cat": "verb",
+   "tier": "B",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0209",
+   "en": "stay up late",
+   "ja": "夜更かしする",
+   "ex": "Don't stay up late.",
+   "cat": "verb",
+   "tier": "B",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0210",
+   "en": "show off",
+   "ja": "～を見せびらかす",
+   "ex": "He likes to show off his new bike.",
+   "cat": "verb",
+   "tier": "A",
+   "src": [
+    "kimini",
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0211",
+   "en": "sign up",
+   "ja": "申し込む",
+   "ex": "I signed up for the class.",
+   "cat": "verb",
+   "tier": "B",
+   "src": [
+    "stud"
+   ]
+  },
+  {
+   "id": "idiom-0212",
+   "en": "speak up",
+   "ja": "大きな声で話す",
+   "ex": "Please speak up.",
+   "cat": "verb",
+   "tier": "B",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0213",
+   "en": "turn down",
+   "ja": "～を断る；（音量を）下げる",
+   "ex": "He turned down the offer.",
+   "cat": "verb",
+   "tier": "A",
+   "src": [
+    "kimini",
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0214",
+   "en": "turn into",
+   "ja": "～に変わる",
+   "ex": "The rain turned into snow.",
+   "cat": "verb",
+   "tier": "A",
+   "src": [
+    "kimini",
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0215",
+   "en": "turn to",
+   "ja": "～に助けを求める",
+   "ex": "She turned to her friends.",
+   "cat": "verb",
+   "tier": "B",
+   "src": [
+    "kimini"
+   ]
+  },
+  {
+   "id": "idiom-0216",
+   "en": "turn out",
+   "ja": "結局～であることがわかる",
+   "ex": "The story turned out to be true.",
+   "cat": "verb",
+   "tier": "B",
+   "src": [
+    "cheer"
+   ]
+  },
+  {
+   "id": "idiom-0217",
+   "en": "turn up",
+   "ja": "姿を現す",
+   "ex": "He turned up late.",
+   "cat": "verb",
+   "tier": "B",
+   "src": [
+    "cheer"
+   ]
+  },
+  {
+   "id": "idiom-0218",
+   "en": "try on",
+   "ja": "～を試着する",
+   "ex": "Can I try on this shirt?",
+   "cat": "verb",
+   "tier": "A",
+   "src": [
+    "stud",
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0219",
+   "en": "watch out for",
+   "ja": "～に気をつける",
+   "ex": "Watch out for cars.",
+   "cat": "verb",
+   "tier": "A",
+   "src": [
+    "kimini"
+   ]
+  },
+  {
+   "id": "idiom-0220",
+   "en": "work out",
+   "ja": "解決する；運動する",
+   "ex": "Everything will work out.",
+   "cat": "verb",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0221",
+   "en": "cut down on",
+   "ja": "～を切り詰める",
+   "ex": "Cut down on sugar.",
+   "cat": "verb",
+   "tier": "B",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0222",
+   "en": "cut off",
+   "ja": "～を切り離す",
+   "ex": "They cut off the relationship.",
+   "cat": "verb",
+   "tier": "C",
+   "src": [
+    "best"
+   ]
+  },
+  {
+   "id": "idiom-0223",
+   "en": "call off",
+   "ja": "～を中止する",
+   "ex": "They called off the game.",
+   "cat": "verb",
+   "tier": "B",
+   "src": [
+    "jump"
+   ]
+  },
+  {
+   "id": "idiom-0224",
+   "en": "call on",
+   "ja": "～を訪問する",
+   "ex": "I called on my aunt.",
+   "cat": "verb",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0225",
+   "en": "call back",
+   "ja": "折り返し電話する",
+   "ex": "I'll call you back later.",
+   "cat": "verb",
+   "tier": "B",
+   "src": [
+    "stud"
+   ]
+  },
+  {
+   "id": "idiom-0226",
+   "en": "carry on",
+   "ja": "続ける",
+   "ex": "Carry on with your work.",
+   "cat": "verb",
+   "tier": "B",
+   "src": [
+    "jump"
+   ]
+  },
+  {
+   "id": "idiom-0227",
+   "en": "carry out",
+   "ja": "実行する",
+   "ex": "He carried out his task.",
+   "cat": "verb",
+   "tier": "B",
+   "src": [
+    "best"
+   ]
+  },
+  {
+   "id": "idiom-0228",
+   "en": "catch up with",
+   "ja": "～に追いつく",
+   "ex": "We can catch up with the others after lunch.",
+   "cat": "verb",
+   "tier": "A",
+   "src": [
+    "kimini",
+    "cheer"
+   ]
+  },
+  {
+   "id": "idiom-0229",
+   "en": "catch a cold",
+   "ja": "風邪をひく",
+   "ex": "I caught a cold yesterday.",
+   "cat": "verb",
+   "tier": "B",
+   "src": [
+    "ankG2"
+   ]
+  },
+  {
+   "id": "idiom-0230",
+   "en": "check out",
+   "ja": "チェックアウトする",
+   "ex": "We checked out of the hotel at ten.",
+   "cat": "verb",
+   "tier": "A",
+   "src": [
+    "kimini"
+   ]
+  },
+  {
+   "id": "idiom-0231",
+   "en": "cheer up",
+   "ja": "元気づける",
+   "ex": "Cheer up! Everything will be fine.",
+   "cat": "verb",
+   "tier": "B",
+   "src": [
+    "jump"
+   ]
+  },
+  {
+   "id": "idiom-0232",
+   "en": "calm down",
+   "ja": "落ち着く",
+   "ex": "Calm down and tell me what happened.",
+   "cat": "verb",
+   "tier": "B",
+   "src": [
+    "jump"
+   ]
+  },
+  {
+   "id": "idiom-0233",
+   "en": "break down",
+   "ja": "故障する",
+   "ex": "My car broke down.",
+   "cat": "verb",
+   "tier": "B",
+   "src": [
+    "jump"
+   ]
+  },
+  {
+   "id": "idiom-0234",
+   "en": "dress up",
+   "ja": "着飾る",
+   "ex": "The children dressed up for Halloween.",
+   "cat": "verb",
+   "tier": "B",
+   "src": [
+    "jump"
+   ]
+  },
+  {
+   "id": "idiom-0235",
+   "en": "drop by",
+   "ja": "～に立ち寄る",
+   "ex": "Drop by my house anytime.",
+   "cat": "verb",
+   "tier": "A",
+   "src": [
+    "kimini"
+   ]
+  },
+  {
+   "id": "idiom-0236",
+   "en": "stop by",
+   "ja": "～に立ち寄る",
+   "ex": "I'll stop by the store.",
+   "cat": "verb",
+   "tier": "A",
+   "src": [
+    "kimini"
+   ]
+  },
+  {
+   "id": "idiom-0237",
+   "en": "eat out",
+   "ja": "外食する",
+   "ex": "Why don't we eat out tonight?",
+   "cat": "verb",
+   "tier": "A",
+   "src": [
+    "aeon"
+   ]
+  },
+  {
+   "id": "idiom-0238",
+   "en": "end up",
+   "ja": "結局～になる",
+   "ex": "We ended up staying home.",
+   "cat": "verb",
+   "tier": "B",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0239",
+   "en": "figure out",
+   "ja": "理解する、解決する",
+   "ex": "I need some time to figure out this problem.",
+   "cat": "verb",
+   "tier": "A",
+   "src": [
+    "aeon",
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0240",
+   "en": "find out",
+   "ja": "調べる、発見する",
+   "ex": "I'm trying to find out more about the history of this city.",
+   "cat": "verb",
+   "tier": "A",
+   "src": [
+    "aeon",
+    "best"
+   ]
+  },
+  {
+   "id": "idiom-0241",
+   "en": "find fault with",
+   "ja": "～に文句を言う",
+   "ex": "My boss is always finding fault with my work.",
+   "cat": "verb",
+   "tier": "B",
+   "src": [
+    "aeon"
+   ]
+  },
+  {
+   "id": "idiom-0242",
+   "en": "hand in",
+   "ja": "～を提出する",
+   "ex": "Hand in your homework.",
+   "cat": "verb",
+   "tier": "A",
+   "src": [
+    "qq",
+    "jump"
+   ]
+  },
+  {
+   "id": "idiom-0243",
+   "en": "hand over",
+   "ja": "～を引き渡す",
+   "ex": "Please hand over the documents.",
+   "cat": "verb",
+   "tier": "A",
+   "src": [
+    "aeon"
+   ]
+  },
+  {
+   "id": "idiom-0244",
+   "en": "hang up",
+   "ja": "電話を切る",
+   "ex": "She hung up the phone.",
+   "cat": "verb",
+   "tier": "B",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0245",
+   "en": "head for",
+   "ja": "～に向かう",
+   "ex": "We headed for the station.",
+   "cat": "verb",
+   "tier": "B",
+   "src": [
+    "cheer"
+   ]
+  },
+  {
+   "id": "idiom-0246",
+   "en": "let down",
+   "ja": "～を失望させる",
+   "ex": "Don't let your friends down.",
+   "cat": "verb",
+   "tier": "B",
+   "src": [
+    "kimini"
+   ]
+  },
+  {
+   "id": "idiom-0247",
+   "en": "line up",
+   "ja": "列を作る",
+   "ex": "The students lined up.",
+   "cat": "verb",
+   "tier": "B",
+   "src": [
+    "kimini"
+   ]
+  },
+  {
+   "id": "idiom-0248",
+   "en": "lose weight",
+   "ja": "痩せる",
+   "ex": "She wants to lose weight.",
+   "cat": "verb",
+   "tier": "A",
+   "src": [
+    "qq"
+   ]
+  },
+  {
+   "id": "idiom-0249",
+   "en": "pick up",
+   "ja": "～を拾い上げる；迎えに行く",
+   "ex": "I'll pick you up at seven.",
+   "cat": "verb",
+   "tier": "A",
+   "src": [
+    "kimini",
+    "stud"
+   ]
+  },
+  {
+   "id": "idiom-0250",
+   "en": "point out",
+   "ja": "指摘する",
+   "ex": "The teacher pointed out my mistake.",
+   "cat": "verb",
+   "tier": "A",
+   "src": [
+    "qq",
+    "cheer"
+   ]
+  },
+  {
+   "id": "idiom-0251",
+   "en": "name A after B",
+   "ja": "BにちなんでAを名付ける",
+   "ex": "They named the dog after their grandfather.",
+   "cat": "verb",
+   "tier": "B",
+   "src": [
+    "kimini"
+   ]
+  },
+  {
+   "id": "idiom-0252",
+   "en": "believe in",
+   "ja": "～を信じる",
+   "ex": "I believe in you.",
+   "cat": "verb",
+   "tier": "B",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0253",
+   "en": "provide A with B",
+   "ja": "AにBを与える",
+   "ex": "The school provides students with lunch.",
+   "cat": "verb",
+   "tier": "B",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0254",
+   "en": "prevent A from doing",
+   "ja": "Aが～するのを防ぐ",
+   "ex": "The rain prevented us from playing.",
+   "cat": "verb",
+   "tier": "B",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0255",
+   "en": "tell A from B",
+   "ja": "AとBを見分ける",
+   "ex": "It's hard to tell the twins apart, but I can tell Ken from his brother.",
+   "cat": "verb",
+   "tier": "C",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0256",
+   "en": "remind A of B",
+   "ja": "AにBを思い出させる",
+   "ex": "This song reminds me of summer.",
+   "cat": "verb",
+   "tier": "B",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0257",
+   "en": "play an important role in",
+   "ja": "～で重要な役割を果たす",
+   "ex": "Volunteers play an important role in this event.",
+   "cat": "verb",
+   "tier": "A",
+   "src": [
+    "kimini",
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0258",
+   "en": "fall in love with",
+   "ja": "～と恋に落ちる",
+   "ex": "She fell in love with the city.",
+   "cat": "verb",
+   "tier": "B",
+   "src": [
+    "qq"
+   ]
+  },
+  {
+   "id": "idiom-0259",
+   "en": "feel at home",
+   "ja": "くつろいだ気分になる",
+   "ex": "Please feel at home.",
+   "cat": "verb",
+   "tier": "B",
+   "src": [
+    "qq"
+   ]
+  },
+  {
+   "id": "idiom-0260",
+   "en": "do the laundry",
+   "ja": "洗濯する",
+   "ex": "My father does the laundry.",
+   "cat": "verb",
+   "tier": "B",
+   "src": [
+    "qq"
+   ]
+  },
+  {
+   "id": "idiom-0261",
+   "en": "do A a favor",
+   "ja": "Aの願いを聞く",
+   "ex": "Can you do me a favor?",
+   "cat": "verb",
+   "tier": "A",
+   "src": [
+    "kimini",
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0262",
+   "en": "(just) in case",
+   "ja": "万一に備えて",
+   "ex": "Take an umbrella just in case.",
+   "cat": "prep",
+   "tier": "A",
+   "src": [
+    "kimini"
+   ]
+  },
+  {
+   "id": "idiom-0263",
+   "en": "a bunch of",
+   "ja": "一束の～",
+   "ex": "She bought a bunch of flowers.",
+   "cat": "prep",
+   "tier": "B",
+   "src": [
+    "kimini"
+   ]
+  },
+  {
+   "id": "idiom-0264",
+   "en": "as a result of",
+   "ja": "～の結果として",
+   "ex": "The game was canceled as a result of the rain.",
+   "cat": "prep",
+   "tier": "A",
+   "src": [
+    "kimini"
+   ]
+  },
+  {
+   "id": "idiom-0265",
+   "en": "as a result",
+   "ja": "その結果として",
+   "ex": "He studied hard. As a result, he passed.",
+   "cat": "prep",
+   "tier": "B",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0266",
+   "en": "at least",
+   "ja": "少なくとも",
+   "ex": "You should at least order a drink.",
+   "cat": "prep",
+   "tier": "A",
+   "src": [
+    "kimini",
+    "aeon"
+   ]
+  },
+  {
+   "id": "idiom-0267",
+   "en": "at most",
+   "ja": "多くても",
+   "ex": "It will take at most two hours.",
+   "cat": "prep",
+   "tier": "B",
+   "src": [
+    "kimini"
+   ]
+  },
+  {
+   "id": "idiom-0268",
+   "en": "at a time",
+   "ja": "一度に",
+   "ex": "Don't eat three apples at a time.",
+   "cat": "prep",
+   "tier": "B",
+   "src": [
+    "qq"
+   ]
+  },
+  {
+   "id": "idiom-0269",
+   "en": "at the moment",
+   "ja": "今、現在",
+   "ex": "He is busy at the moment.",
+   "cat": "prep",
+   "tier": "B",
+   "src": [
+    "qq"
+   ]
+  },
+  {
+   "id": "idiom-0270",
+   "en": "at the same time",
+   "ja": "同時に",
+   "ex": "She was happy and sad at the same time.",
+   "cat": "prep",
+   "tier": "A",
+   "src": [
+    "aeon"
+   ]
+  },
+  {
+   "id": "idiom-0271",
+   "en": "at last",
+   "ja": "ついに",
+   "ex": "At last, the bus came.",
+   "cat": "prep",
+   "tier": "B",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0272",
+   "en": "at one time",
+   "ja": "かつて；一度に",
+   "ex": "At one time, I lived in Osaka.",
+   "cat": "prep",
+   "tier": "B",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0273",
+   "en": "at random",
+   "ja": "でたらめに",
+   "ex": "Pick a card at random.",
+   "cat": "prep",
+   "tier": "B",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0274",
+   "en": "at first",
+   "ja": "最初は",
+   "ex": "At first, I didn't like it.",
+   "cat": "prep",
+   "tier": "B",
+   "src": [
+    "cheer"
+   ]
+  },
+  {
+   "id": "idiom-0275",
+   "en": "by chance",
+   "ja": "偶然に",
+   "ex": "I met my neighbor by chance.",
+   "cat": "prep",
+   "tier": "A",
+   "src": [
+    "kimini",
+    "best"
+   ]
+  },
+  {
+   "id": "idiom-0276",
+   "en": "by accident",
+   "ja": "偶然に",
+   "ex": "I heard about it by accident.",
+   "cat": "prep",
+   "tier": "A",
+   "src": [
+    "cheer"
+   ]
+  },
+  {
+   "id": "idiom-0277",
+   "en": "by any chance",
+   "ja": "ひょっとして",
+   "ex": "By any chance, do you have a spare pen?",
+   "cat": "prep",
+   "tier": "A",
+   "src": [
+    "aeon"
+   ]
+  },
+  {
+   "id": "idiom-0278",
+   "en": "by heart",
+   "ja": "暗記して",
+   "ex": "He can play the song by heart.",
+   "cat": "prep",
+   "tier": "A",
+   "src": [
+    "aeon"
+   ]
+  },
+  {
+   "id": "idiom-0279",
+   "en": "by mistake",
+   "ja": "間違って",
+   "ex": "I took your umbrella by mistake.",
+   "cat": "prep",
+   "tier": "B",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0280",
+   "en": "by now",
+   "ja": "今頃にはもう",
+   "ex": "She should be home by now.",
+   "cat": "prep",
+   "tier": "B",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0281",
+   "en": "by way of",
+   "ja": "～経由で",
+   "ex": "We went to Kyoto by way of Nagoya.",
+   "cat": "prep",
+   "tier": "C",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0282",
+   "en": "by the time",
+   "ja": "～するまでには",
+   "ex": "By the time I arrived, the movie had started.",
+   "cat": "prep",
+   "tier": "B",
+   "src": [
+    "kimini"
+   ]
+  },
+  {
+   "id": "idiom-0283",
+   "en": "day by day",
+   "ja": "日に日に",
+   "ex": "Her English is getting better day by day.",
+   "cat": "prep",
+   "tier": "B",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0284",
+   "en": "step by step",
+   "ja": "一歩ずつ",
+   "ex": "Learn it step by step.",
+   "cat": "prep",
+   "tier": "B",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0285",
+   "en": "little by little",
+   "ja": "少しずつ",
+   "ex": "Little by little, the snow melted.",
+   "cat": "prep",
+   "tier": "B",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0286",
+   "en": "except for",
+   "ja": "～を除いては",
+   "ex": "Everyone was there except for Ken.",
+   "cat": "prep",
+   "tier": "A",
+   "src": [
+    "kimini"
+   ]
+  },
+  {
+   "id": "idiom-0287",
+   "en": "from now on",
+   "ja": "今後は",
+   "ex": "From now on, I'll study harder.",
+   "cat": "prep",
+   "tier": "A",
+   "src": [
+    "kimini"
+   ]
+  },
+  {
+   "id": "idiom-0288",
+   "en": "from time to time",
+   "ja": "時々",
+   "ex": "I see him from time to time.",
+   "cat": "prep",
+   "tier": "B",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0289",
+   "en": "in addition to",
+   "ja": "～に加えて",
+   "ex": "In addition to English, she speaks French fluently.",
+   "cat": "prep",
+   "tier": "A",
+   "src": [
+    "kimini",
+    "aeon"
+   ]
+  },
+  {
+   "id": "idiom-0290",
+   "en": "in common",
+   "ja": "共通して",
+   "ex": "Dawn and her boyfriend have a lot in common.",
+   "cat": "prep",
+   "tier": "A",
+   "src": [
+    "kimini",
+    "cheer"
+   ]
+  },
+  {
+   "id": "idiom-0291",
+   "en": "in line",
+   "ja": "一直線に、整列して",
+   "ex": "Stand in line, please.",
+   "cat": "prep",
+   "tier": "A",
+   "src": [
+    "kimini"
+   ]
+  },
+  {
+   "id": "idiom-0292",
+   "en": "in particular",
+   "ja": "特に",
+   "ex": "I love fruits, in particular apples.",
+   "cat": "prep",
+   "tier": "A",
+   "src": [
+    "kimini"
+   ]
+  },
+  {
+   "id": "idiom-0293",
+   "en": "in advance",
+   "ja": "前もって",
+   "ex": "Please pay the fee in advance.",
+   "cat": "prep",
+   "tier": "A",
+   "src": [
+    "aeon"
+   ]
+  },
+  {
+   "id": "idiom-0294",
+   "en": "in spite of",
+   "ja": "～にもかかわらず",
+   "ex": "In spite of bad weather, the game started.",
+   "cat": "prep",
+   "tier": "A",
+   "src": [
+    "best"
+   ]
+  },
+  {
+   "id": "idiom-0295",
+   "en": "instead of",
+   "ja": "～の代わりに",
+   "ex": "I'll cook instead of you.",
+   "cat": "prep",
+   "tier": "A",
+   "src": [
+    "best"
+   ]
+  },
+  {
+   "id": "idiom-0296",
+   "en": "in a minute",
+   "ja": "すぐに",
+   "ex": "I'll be back in a minute.",
+   "cat": "prep",
+   "tier": "A",
+   "src": [
+    "kimini",
+    "cheer"
+   ]
+  },
+  {
+   "id": "idiom-0297",
+   "en": "in charge of",
+   "ja": "～を担当して",
+   "ex": "Who is in charge of this project?",
+   "cat": "prep",
+   "tier": "A",
+   "src": [
+    "best"
+   ]
+  },
+  {
+   "id": "idiom-0298",
+   "en": "in the middle of",
+   "ja": "～の途中で",
+   "ex": "Don't talk in the middle of class.",
+   "cat": "prep",
+   "tier": "B",
+   "src": [
+    "stud"
+   ]
+  },
+  {
+   "id": "idiom-0299",
+   "en": "in the future",
+   "ja": "将来",
+   "ex": "I want to be a doctor in the future.",
+   "cat": "prep",
+   "tier": "B",
+   "src": [
+    "stud"
+   ]
+  },
+  {
+   "id": "idiom-0300",
+   "en": "in detail",
+   "ja": "詳しく",
+   "ex": "Tell me about it in detail.",
+   "cat": "prep",
+   "tier": "B",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0301",
+   "en": "in general",
+   "ja": "一般的に",
+   "ex": "In general, dogs are friendly.",
+   "cat": "prep",
+   "tier": "B",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0302",
+   "en": "in reality",
+   "ja": "実際には",
+   "ex": "In reality, it was not easy.",
+   "cat": "prep",
+   "tier": "B",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0303",
+   "en": "in place of",
+   "ja": "～の代わりに",
+   "ex": "Use honey in place of sugar.",
+   "cat": "prep",
+   "tier": "B",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0304",
+   "en": "in turn",
+   "ja": "順番に",
+   "ex": "Each student spoke in turn.",
+   "cat": "prep",
+   "tier": "C",
+   "src": [
+    "cheer"
+   ]
+  },
+  {
+   "id": "idiom-0305",
+   "en": "in contrast",
+   "ja": "対照的に",
+   "ex": "In contrast, his sister is quiet.",
+   "cat": "prep",
+   "tier": "C",
+   "src": [
+    "cheer"
+   ]
+  },
+  {
+   "id": "idiom-0306",
+   "en": "out of order",
+   "ja": "故障して",
+   "ex": "The elevator is out of order.",
+   "cat": "prep",
+   "tier": "B",
+   "src": [
+    "cheer"
+   ]
+  },
+  {
+   "id": "idiom-0307",
+   "en": "out of date",
+   "ja": "時代遅れの",
+   "ex": "This phone is out of date.",
+   "cat": "prep",
+   "tier": "A",
+   "src": [
+    "kimini",
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0308",
+   "en": "out of control",
+   "ja": "制御できない",
+   "ex": "The fire got out of control.",
+   "cat": "prep",
+   "tier": "B",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0309",
+   "en": "out of sight",
+   "ja": "見えないところに",
+   "ex": "The ship went out of sight.",
+   "cat": "prep",
+   "tier": "B",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0310",
+   "en": "on purpose",
+   "ja": "わざと",
+   "ex": "Did you break the vase on purpose?",
+   "cat": "prep",
+   "tier": "A",
+   "src": [
+    "aeon"
+   ]
+  },
+  {
+   "id": "idiom-0311",
+   "en": "on business",
+   "ja": "仕事で",
+   "ex": "My father went to Tokyo on business.",
+   "cat": "prep",
+   "tier": "A",
+   "src": [
+    "kimini"
+   ]
+  },
+  {
+   "id": "idiom-0312",
+   "en": "on one's own",
+   "ja": "自分自身で",
+   "ex": "She did it on her own.",
+   "cat": "prep",
+   "tier": "A",
+   "src": [
+    "kimini"
+   ]
+  },
+  {
+   "id": "idiom-0313",
+   "en": "on duty",
+   "ja": "当直で",
+   "ex": "The nurse is on duty today.",
+   "cat": "prep",
+   "tier": "B",
+   "src": [
+    "stud"
+   ]
+  },
+  {
+   "id": "idiom-0314",
+   "en": "on foot",
+   "ja": "徒歩で",
+   "ex": "We went to school on foot.",
+   "cat": "prep",
+   "tier": "B",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0315",
+   "en": "on behalf of",
+   "ja": "～を代表して",
+   "ex": "I'm writing on behalf of my team.",
+   "cat": "prep",
+   "tier": "C",
+   "src": [
+    "stud"
+   ]
+  },
+  {
+   "id": "idiom-0316",
+   "en": "on average",
+   "ja": "平均して",
+   "ex": "On average, I sleep seven hours.",
+   "cat": "prep",
+   "tier": "B",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0317",
+   "en": "on the point of",
+   "ja": "～しようとしていたところ",
+   "ex": "They were on the point of leaving when the phone rang.",
+   "cat": "prep",
+   "tier": "B",
+   "src": [
+    "aeon"
+   ]
+  },
+  {
+   "id": "idiom-0318",
+   "en": "on the way home",
+   "ja": "帰り道に",
+   "ex": "I bought some bread on the way home.",
+   "cat": "prep",
+   "tier": "B",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0319",
+   "en": "once a week",
+   "ja": "週に1度",
+   "ex": "I play tennis once a week.",
+   "cat": "prep",
+   "tier": "B",
+   "src": [
+    "kimini"
+   ]
+  },
+  {
+   "id": "idiom-0320",
+   "en": "no longer",
+   "ja": "もはや～でない",
+   "ex": "He no longer lives here.",
+   "cat": "prep",
+   "tier": "A",
+   "src": [
+    "kimini"
+   ]
+  },
+  {
+   "id": "idiom-0321",
+   "en": "no doubt",
+   "ja": "疑いなく",
+   "ex": "No doubt she will win.",
+   "cat": "prep",
+   "tier": "B",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0322",
+   "en": "nothing but",
+   "ja": "ただ～だけ",
+   "ex": "He eats nothing but ramen.",
+   "cat": "prep",
+   "tier": "B",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0323",
+   "en": "more and more",
+   "ja": "ますます",
+   "ex": "More and more people are starting to work remotely.",
+   "cat": "prep",
+   "tier": "A",
+   "src": [
+    "aeon"
+   ]
+  },
+  {
+   "id": "idiom-0324",
+   "en": "so far",
+   "ja": "今までのところ",
+   "ex": "Do you have any questions so far?",
+   "cat": "prep",
+   "tier": "A",
+   "src": [
+    "kimini",
+    "aeon",
+    "best"
+   ]
+  },
+  {
+   "id": "idiom-0325",
+   "en": "as usual",
+   "ja": "いつものように",
+   "ex": "Ken was late for work as usual.",
+   "cat": "prep",
+   "tier": "A",
+   "src": [
+    "aeon"
+   ]
+  },
+  {
+   "id": "idiom-0326",
+   "en": "as well",
+   "ja": "～もまた",
+   "ex": "I think everyone else did as well.",
+   "cat": "prep",
+   "tier": "A",
+   "src": [
+    "aeon"
+   ]
+  },
+  {
+   "id": "idiom-0327",
+   "en": "as well as",
+   "ja": "～だけでなく",
+   "ex": "B as well as A = AだけでなくBも",
+   "cat": "prep",
+   "tier": "B",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0328",
+   "en": "as for",
+   "ja": "～については",
+   "ex": "As for me, I'll stay home.",
+   "cat": "prep",
+   "tier": "B",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0329",
+   "en": "as if",
+   "ja": "まるで～かのように",
+   "ex": "He talks as if he knew everything.",
+   "cat": "prep",
+   "tier": "B",
+   "src": [
+    "cheer"
+   ]
+  },
+  {
+   "id": "idiom-0330",
+   "en": "according to",
+   "ja": "～によれば",
+   "ex": "According to the map, we should turn left.",
+   "cat": "prep",
+   "tier": "A",
+   "src": [
+    "cheer"
+   ]
+  },
+  {
+   "id": "idiom-0331",
+   "en": "around the world",
+   "ja": "世界中で",
+   "ex": "This product is famous around the world.",
+   "cat": "prep",
+   "tier": "A",
+   "src": [
+    "aeon"
+   ]
+  },
+  {
+   "id": "idiom-0332",
+   "en": "all of a sudden",
+   "ja": "突然",
+   "ex": "He left the room all of a sudden.",
+   "cat": "prep",
+   "tier": "A",
+   "src": [
+    "aeon"
+   ]
+  },
+  {
+   "id": "idiom-0333",
+   "en": "a couple of",
+   "ja": "2、3の～",
+   "ex": "I'll be there in a couple of minutes.",
+   "cat": "prep",
+   "tier": "B",
+   "src": [
+    "qq"
+   ]
+  },
+  {
+   "id": "idiom-0334",
+   "en": "a sheet of",
+   "ja": "1枚の～",
+   "ex": "Give me a sheet of paper.",
+   "cat": "prep",
+   "tier": "B",
+   "src": [
+    "qq"
+   ]
+  },
+  {
+   "id": "idiom-0335",
+   "en": "a number of",
+   "ja": "多くの～",
+   "ex": "A number of students joined the club.",
+   "cat": "prep",
+   "tier": "B",
+   "src": [
+    "kimini"
+   ]
+  },
+  {
+   "id": "idiom-0336",
+   "en": "a variety of",
+   "ja": "様々な～",
+   "ex": "There is a variety of fruits at the market.",
+   "cat": "prep",
+   "tier": "A",
+   "src": [
+    "aeon"
+   ]
+  },
+  {
+   "id": "idiom-0337",
+   "en": "plenty of",
+   "ja": "たくさんの～",
+   "ex": "We have plenty of time.",
+   "cat": "prep",
+   "tier": "A",
+   "src": [
+    "kimini"
+   ]
+  },
+  {
+   "id": "idiom-0338",
+   "en": "thanks to",
+   "ja": "～のおかげで",
+   "ex": "Thanks to your help, I passed.",
+   "cat": "prep",
+   "tier": "B",
+   "src": [
+    "stud"
+   ]
+  },
+  {
+   "id": "idiom-0339",
+   "en": "due to",
+   "ja": "～のせいで",
+   "ex": "The festival was canceled due to rain.",
+   "cat": "prep",
+   "tier": "B",
+   "src": [
+    "best"
+   ]
+  },
+  {
+   "id": "idiom-0340",
+   "en": "because of",
+   "ja": "～のせいで",
+   "ex": "The game was canceled because of the rain.",
+   "cat": "prep",
+   "tier": "B",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0341",
+   "en": "the other day",
+   "ja": "先日",
+   "ex": "I saw her the other day.",
+   "cat": "prep",
+   "tier": "B",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0342",
+   "en": "right away",
+   "ja": "すぐに",
+   "ex": "I'll do it right away.",
+   "cat": "prep",
+   "tier": "B",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0343",
+   "en": "face to face",
+   "ja": "面と向かって",
+   "ex": "Let's talk face to face.",
+   "cat": "prep",
+   "tier": "B",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0344",
+   "en": "what's worse",
+   "ja": "さらに悪いことに",
+   "ex": "What's worse, it started to rain.",
+   "cat": "prep",
+   "tier": "C",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0345",
+   "en": "to begin with",
+   "ja": "そもそも；まず第一に",
+   "ex": "To begin with, I don't agree.",
+   "cat": "prep",
+   "tier": "B",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0346",
+   "en": "to tell the truth",
+   "ja": "実を言うと",
+   "ex": "To tell the truth, I forgot.",
+   "cat": "prep",
+   "tier": "B",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0347",
+   "en": "for instance",
+   "ja": "例えば",
+   "ex": "Last month, for instance, the sales went up.",
+   "cat": "prep",
+   "tier": "A",
+   "src": [
+    "aeon"
+   ]
+  },
+  {
+   "id": "idiom-0348",
+   "en": "for a while",
+   "ja": "しばらくの間",
+   "ex": "I lived there for a while.",
+   "cat": "prep",
+   "tier": "B",
+   "src": [
+    "stud"
+   ]
+  },
+  {
+   "id": "idiom-0349",
+   "en": "with luck",
+   "ja": "運が良ければ",
+   "ex": "With luck, we'll finish today.",
+   "cat": "prep",
+   "tier": "B",
+   "src": [
+    "kimini"
+   ]
+  },
+  {
+   "id": "idiom-0350",
+   "en": "after all",
+   "ja": "結局",
+   "ex": "After all, he didn't come.",
+   "cat": "prep",
+   "tier": "B",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0351",
+   "en": "never A without doing",
+   "ja": "Aすると必ず～する",
+   "ex": "I never see her without thinking of my sister.",
+   "cat": "prep",
+   "tier": "C",
+   "src": [
+    "yt"
+   ]
+  },
+  {
+   "id": "idiom-0352",
+   "en": "prefer A to B",
+   "ja": "BよりAを好む",
+   "ex": "I prefer tea to coffee.",
+   "cat": "prep",
+   "tier": "A",
+   "src": [
+    "kimini"
+   ]
+  },
+  {
+   "id": "idiom-0353",
+   "en": "used to do",
+   "ja": "以前はよく～した",
+   "ex": "I used to play baseball.",
+   "cat": "prep",
+   "tier": "A",
+   "src": [
+    "kimini"
+   ]
+  },
+  {
+   "id": "idiom-0354",
+   "en": "come to mind",
+   "ja": "心に浮かぶ",
+   "ex": "A good idea came to mind.",
+   "cat": "prep",
+   "tier": "B",
+   "src": [
+    "qq"
+   ]
+  },
+  {
+   "id": "idiom-0355",
+   "en": "Why don't you",
+   "ja": "～しませんか？",
+   "ex": "Why don't you come with us?",
+   "cat": "conv",
+   "tier": "A",
+   "src": [
+    "best"
+   ]
+  },
+  {
+   "id": "idiom-0356",
+   "en": "Would you like",
+   "ja": "～はいかがですか？",
+   "ex": "Would you like some tea?",
+   "cat": "conv",
+   "tier": "A",
+   "src": [
+    "best"
+   ]
+  },
+  {
+   "id": "idiom-0357",
+   "en": "How about",
+   "ja": "～はどうですか？",
+   "ex": "How about going swimming?",
+   "cat": "conv",
+   "tier": "A",
+   "src": [
+    "best"
+   ]
+  },
+  {
+   "id": "idiom-0358",
+   "en": "Do you mind if",
+   "ja": "～してもいいですか？",
+   "ex": "Do you mind if I open the window?",
+   "cat": "conv",
+   "tier": "A",
+   "src": [
+    "best"
+   ]
+  },
+  {
+   "id": "idiom-0359",
+   "en": "Would you mind -ing",
+   "ja": "～していただけませんか？",
+   "ex": "Would you mind carrying this box?",
+   "cat": "conv",
+   "tier": "A",
+   "src": [
+    "best"
+   ]
+  },
+  {
+   "id": "idiom-0360",
+   "en": "make yourself at home",
+   "ja": "どうぞくつろいでください",
+   "ex": "Please make yourself at home.",
+   "cat": "conv",
+   "tier": "A",
+   "src": [
+    "best"
+   ]
+  },
+  {
+   "id": "idiom-0361",
+   "en": "help yourself to",
+   "ja": "どうぞご自由に～を食べてください",
+   "ex": "Please help yourself to some cake.",
+   "cat": "conv",
+   "tier": "A",
+   "src": [
+    "best"
+   ]
+  },
+  {
+   "id": "idiom-0362",
+   "en": "What do you say to -ing",
+   "ja": "～しませんか？",
+   "ex": "What do you say to eating out tonight?",
+   "cat": "conv",
+   "tier": "B",
+   "src": [
+    "best"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>英検準2級 タイピング道場</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <!-- ホーム画面 -->
+  <section id="screen-home" class="screen">
+    <header class="topbar">
+      <div class="rank-badge" id="rank-badge">見習い</div>
+      <div class="coins">🪙 <span id="coin-count">0</span></div>
+      <div class="streak">🔥 <span id="streak-count">0</span>日</div>
+    </header>
+    <h1>英検準2級<br><span class="accent">タイピング道場</span></h1>
+    <div id="today-status" class="status-card"></div>
+    <div class="menu">
+      <button id="btn-start" class="btn btn-primary">今日の修行を開始</button>
+      <button id="btn-resume" class="btn btn-secondary" style="display:none">続きから再開</button>
+      <button id="btn-test" class="btn">週次テスト</button>
+      <button id="btn-report" class="btn">保護者リポート</button>
+      <button id="btn-cards" class="btn">カード図鑑</button>
+    </div>
+    <div class="xpbar-wrap"><div class="xpbar" id="xpbar"></div></div>
+    <div class="xp-label" id="xp-label"></div>
+  </section>
+
+  <!-- セッション画面 -->
+  <section id="screen-session" class="screen" style="display:none">
+    <header class="topbar">
+      <div class="progress-mini" id="progress-mini">0/0</div>
+      <div class="timer" id="timer">20</div>
+      <div class="combo" id="combo"></div>
+    </header>
+    <div class="timerbar-wrap"><div class="timerbar" id="timerbar"></div></div>
+    <div class="question-card">
+      <div class="q-kind" id="q-kind">単語</div>
+      <div class="q-meaning" id="q-meaning"></div>
+      <div class="q-example" id="q-example"></div>
+      <div class="q-hint" id="q-hint"></div>
+    </div>
+    <form id="answer-form" autocomplete="off">
+      <input type="text" id="answer-input" placeholder="英語で入力…" autocapitalize="off" autocorrect="off" spellcheck="false">
+      <button type="submit" class="btn btn-primary">決定</button>
+    </form>
+    <div class="feedback" id="feedback"></div>
+    <div class="session-actions">
+      <button id="btn-reveal" class="btn btn-danger-small">答えを見る（ミス2回分）</button>
+      <button id="btn-home" class="btn btn-small">ホームへ</button>
+    </div>
+  </section>
+
+  <!-- 完了画面 -->
+  <section id="screen-done" class="screen" style="display:none">
+    <h1>🎉 セッション完了！</h1>
+    <div class="status-card" id="done-stats"></div>
+    <div id="done-rewards" class="rewards-list"></div>
+    <button id="btn-done-home" class="btn btn-primary">ホームへ戻る</button>
+  </section>
+
+  <!-- テスト画面 -->
+  <section id="screen-test" class="screen" style="display:none">
+    <h2>週次テスト</h2>
+    <div id="test-intro" class="status-card"></div>
+    <button id="btn-test-start" class="btn btn-primary">テスト開始（20問）</button>
+    <button id="btn-test-back" class="btn">ホームへ</button>
+  </section>
+
+  <!-- 保護者リポート -->
+  <section id="screen-report" class="screen" style="display:none">
+    <h2>保護者リポート</h2>
+    <div class="status-card" id="report-body"></div>
+    <div class="session-actions">
+      <button id="btn-report-reset" class="btn btn-danger-small">全データリセット</button>
+      <button id="btn-report-back" class="btn btn-small">ホームへ</button>
+    </div>
+  </section>
+
+  <!-- カード図鑑 -->
+  <section id="screen-cards" class="screen" style="display:none">
+    <h2>カード図鑑</h2>
+    <div id="cards-grid" class="cards-grid"></div>
+    <button id="btn-cards-back" class="btn">ホームへ</button>
+  </section>
+
+  <!-- モーダル（報酬・カード獲得） -->
+  <div id="modal" class="modal" style="display:none">
+    <div class="modal-box" id="modal-box"></div>
+  </div>
+</div>
+<script src="js/storage.js"></script>
+<script src="js/util.js"></script>
+<script src="js/srs.js"></script>
+<script src="js/session.js"></script>
+<script src="js/rewards.js"></script>
+<script src="js/report.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
