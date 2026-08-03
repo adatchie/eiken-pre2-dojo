@@ -108,6 +108,9 @@ h2 { font-size: 1.4rem; text-align: center; margin: 16px 0; }
 .card-item .icon { font-size: 1.8rem; }
 .card-item .name { font-weight: 800; font-size: .9rem; margin-top: 4px; }
 .card-item .desc { font-size: .75rem; color: var(--muted); margin-top: 2px; }
+.fleet-summary { grid-column: 1 / -1; text-align: center; font-size: 1.05rem; padding: 10px; background: var(--card); border-radius: var(--radius); }
+.fleet-type { grid-column: 1 / -1; font-weight: 800; font-size: .95rem; color: var(--primary); margin-top: 8px; padding-left: 2px; }
+.fleet-complete { grid-column: 1 / -1; text-align: center; font-weight: 800; font-size: 1.1rem; padding: 14px; color: var(--accent); }
 
 .modal { position: fixed; inset: 0; background: rgba(0,0,0,.55); display: flex; align-items: center; justify-content: center; z-index: 100; }
 .modal-box { background: #fff; border-radius: var(--radius); padding: 24px; max-width: 90%; width: 380px; text-align: center; font-size: 1rem; line-height: 1.9; box-shadow: 0 8px 30px rgba(0,0,0,.3); }

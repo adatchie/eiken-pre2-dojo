@@ -84,7 +84,8 @@
     const ev = Rewards.touchStudy(profile, U.todayStr());
     Rewards.flush(profile);
     if (ev.bonus) {
-      showModal(`🎁 ログインボーナス ${ev.bonus.day}日目<br>+${ev.bonus.coins}コイン${ev.bonus.rare ? "<br>🌟 レアカードパック獲得！" : ""}`, () => enterSession());
+      const shipLine = ev.ship ? `<br>⚓ 特別配属！ <b>${ev.ship.type}「${ev.ship.name}」</b>` : "";
+      showModal(`🎁 ログインボーナス ${ev.bonus.day}日目<br>+${ev.bonus.coins}コイン${ev.bonus.rare ? "<br>🌟 大ボーナス！" : ""}${shipLine}`, () => enterSession());
     } else {
       enterSession();
     }
@@ -268,11 +269,11 @@
     phase = "done";
     const st = Session.stats(sess);
     const isTest = mode === "test";
-    let newCards = [];
+    let newShip = null;
     if (!isTest && st.done && !sess.rewarded) {
       sess.rewarded = true;
       Session.save(sess);
-      newCards = Rewards.onSessionDone(profile, st, U.todayStr());
+      newShip = Rewards.onSessionDone(profile, st, U.todayStr());
       Rewards.flush(profile);
     }
     if (isTest) {
@@ -287,7 +288,12 @@
     if (!isTest && st.done) {
       rw.push(`🪙 セッション完了ボーナス +50コイン`);
       if (st.wrong === 0) rw.push(`✨ 無傷クリアボーナス +50コイン`);
-      newCards.forEach((c) => rw.push(`🎴 カード獲得「${c.name}」 +30コイン`));
+      if (newShip) {
+        rw.push(`⚓ <b>新艦配属！</b> ${newShip.type}「${newShip.name}」<br><span style="font-size:.85rem;color:#64748b">${newShip.note}（配属 ${profile.ships.length}/${Rewards.FLEET.length}隻）</span>`);
+        if (profile.ships.length === Rewards.FLEET.length) {
+          rw.push(`🎌 <b>連合艦隊 全艦コンプリート！</b>`);
+        }
+      }
     }
     $("done-rewards").innerHTML = rw.length ? rw.join("<br>") : "";
     $("btn-done-home").textContent = isTest ? "ホームへ戻る" : "ホームへ戻る";
@@ -343,7 +349,7 @@
       <b>【進度】</b><br>
       導入済み: ${introduced}語 ／ 定着(4回以上連続正解): ${mastered}語<br>
       ランク: ${rank.name} ／ XP: ${profile.xp} ／ コイン: ${profile.coins}<br>
-      獲得カード: ${profile.cards.length}枚`;
+      配属済み軍艦: ${profile.ships.length}隻 ／ ${Rewards.FLEET.length}隻`;
     if (profile.history.length) {
       html += `<br><br><b>【履歴（最新10件）】</b><table class="report-table"><tr><th>日付</th><th>正解</th><th>ミス</th><th>完走</th></tr>`;
       profile.history.slice(-10).reverse().forEach((h) => {
@@ -355,18 +361,34 @@
     show("report");
   }
 
-  // ---------- カード図鑑 ----------
+  // ---------- 軍艦図鑑 ----------
   function openCards() {
     profile = Rewards.load();
+    const ownedIdx = new Set(profile.ships.map((id) => Rewards.FLEET.findIndex((s) => s.id === id)));
     const grid = $("cards-grid");
-    grid.innerHTML = Rewards.CARDS.map((c) => {
-      const owned = profile.cards.includes(c.id);
-      return `<div class="card-item ${owned ? "" : "locked"}">
-        <div class="icon">${owned ? "🎴" : "🔒"}</div>
-        <div class="name">${c.name}</div>
-        <div class="desc">${c.desc}</div>
-      </div>`;
-    }).join("");
+    let html = `<div class="fleet-summary">配属進捗 <b>${profile.ships.length}</b> ／ ${Rewards.FLEET.length}隻</div>`;
+    const byType = {};
+    Rewards.FLEET.forEach((ship, idx) => {
+      (byType[ship.type] = byType[ship.type] || []).push({ ship, idx });
+    });
+    for (const type of ["駆逐艦", "軽巡洋艦", "重巡洋艦", "潜水艦", "空母", "戦艦"]) {
+      const list = byType[type];
+      if (!list) continue;
+      const ownedInType = list.filter((x) => ownedIdx.has(x.idx)).length;
+      html += `<div class="fleet-type">${type}（${ownedInType}/${list.length}）</div>`;
+      html += list.map(({ ship, idx }) => {
+        const owned = ownedIdx.has(idx);
+        return `<div class="card-item ${owned ? "" : "locked"}">
+          <div class="icon">${owned ? "⚓" : "🌊"}</div>
+          <div class="name">${owned ? ship.name : "？？？"}</div>
+          <div class="desc">${owned ? ship.note : "未配属"}</div>
+        </div>`;
+      }).join("");
+    }
+    if (profile.ships.length === Rewards.FLEET.length) {
+      html += `<div class="fleet-complete">🎌 連合艦隊 全艦コンプリート！</div>`;
+    }
+    grid.innerHTML = html;
     show("cards");
   }
 

@@ -153,8 +153,8 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   await sleep(100);
   $("btn-cards").click();
   await sleep(100);
-  check("カード図鑑へ", $("screen-cards").style.display !== "none");
-  check("カード12枚表示", window.document.querySelectorAll(".card-item").length === 12);
+  check("軍艦図鑑へ", $("screen-cards").style.display !== "none");
+  check("軍艦60隻表示", window.document.querySelectorAll(".card-item").length === 60);
 
   // --- モーダル（OKで閉じる） ---
   $("btn-cards-back").click();

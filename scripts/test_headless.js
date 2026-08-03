@@ -110,13 +110,16 @@ const loaded = Session.load();
 check("Session.load 同日復帰", loaded && loaded.date === today);
 
 // --- Rewards ---
-const p = Rewards.load();
-// 旧バージョンプロファイルとの前方互換確認（historyフィールド欠如→マージ）
+// 旧バージョンプロファイルとの前方互換確認（ships/historyフィールド欠如→マージ）
 const legacy = Rewards.defaults();
+delete legacy.ships;
+delete legacy.shipLastAward;
 delete legacy.history;
-Store.set("rewards", legacy);
+Store.set("stats_v1", legacy);
 const merged = Rewards.load();
-check("旧プロファイルにhistoryを自動マージ", Array.isArray(merged.history));
+check("旧プロファイルにships/historyを自動マージ", Array.isArray(merged.ships) && Array.isArray(merged.history));
+
+const p = Rewards.load();
 const ev = Rewards.touchStudy(p, today);
 check("初回ログインボーナス day1 +20コイン", ev.bonus && ev.bonus.day === 1 && ev.bonus.coins === 20);
 check("ストリーク1日開始", p.streak === 1);
@@ -131,16 +134,36 @@ const ev4 = Rewards.touchStudy(p, U.addDays(today, 5));
 check("途切れたらカレンダーday1にリセット", ev4.bonus && ev4.bonus.day === 1);
 check("途切れたらストリーク1にリセット", p.streak === 1);
 
-const coinsBefore = p.coins;
-Rewards.onAnswer(p, true, "word");
-check("正解でコイン増加", p.coins > coinsBefore);
-Rewards.onAnswer(p, false, "word");
-check("不正解でコイン不変", true); // 増加しないことだけ確認
+// FLEET構成チェック
+check("FLEET全60隻", Rewards.FLEET.length === 60);
+check("最後の一隻は大和", Rewards.FLEET[59].name === "大和");
+check("艦ID重複なし", new Set(Rewards.FLEET.map((s) => s.id)).size === 60);
+
+// 7日連続ログイン → 大ボーナス+特別配属
+Store.set("stats_v1", Rewards.defaults());
+const p7 = Rewards.load();
+for (let d = 0; d < 6; d++) Rewards.touchStudy(p7, U.addDays(today, d));
+check("6日間ログインでコイン120", p7.coins === 120);
+const ev7 = Rewards.touchStudy(p7, U.addDays(today, 6));
+check("7日目で大ボーナス+100コイン", ev7.bonus && ev7.bonus.rare && ev7.bonus.coins === 100);
+check("7日目に特別配属あり（1番艦）", ev7.ship !== null && ev7.ship.id === Rewards.FLEET[0].id);
+
+// セッション完走 → 新艦配属（1日1隻制限）
+Store.set("stats_v1", Rewards.defaults());
 const p2 = Rewards.load();
+Rewards.touchStudy(p2, today);
+const coinsBefore = p2.coins;
+Rewards.onAnswer(p2, true, "word");
+check("正解でコイン増加", p2.coins > coinsBefore);
+Rewards.onAnswer(p2, false, "word");
+check("不正解でコイン不変", true); // 増加しないことだけ確認
 const statsDone = { done: true, correct: 10, wrong: 0 };
-const newCards = Rewards.onSessionDone(p2, statsDone, today);
-check("完走でセッション制覇カード獲得", p2.cards.includes("c8"));
+const ship1 = Rewards.onSessionDone(p2, statsDone, today);
+check("完走で新艦配属（1番艦）", ship1 && ship1.id === Rewards.FLEET[0].id);
+check("配属済み艦が記録される", p2.ships.includes(Rewards.FLEET[0].id));
 check("無傷ボーナスでflawless=1", p2.flawless === 1);
+const ship2 = Rewards.onSessionDone(p2, statsDone, today);
+check("同日2回目の完走では配属なし（1日1隻）", ship2 === null && p2.ships.length === 1);
 
 // --- Report ---
 const summary = Report.summary(p2);
