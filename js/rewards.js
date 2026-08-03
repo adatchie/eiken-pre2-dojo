@@ -84,6 +84,13 @@ const Rewards = (() => {
     { id: "bb10", name: "大和", type: "戦艦", note: "世界最大の戦艦・最後の一隻" },
   ];
 
+  // ===== 配属ルール（Lv制対応 v2）=====
+  // 通常艦: 駆逐艦(16)+軽巡(8)+重巡(10)=34隻 → 毎日のセッション完走で1日1隻（従来どおり）
+  // レア艦: 潜水艦(4)+空母(12)+戦艦(10)=26隻 → Lv3クリア（本番難易度で正解）した語数の累計で解放
+  const REGULAR_COUNT = 34;             // FLEET先頭34隻が通常枠
+  const RARE_FIRST = 25;                // 初のレア艦解放に必要なLv3クリア語数
+  const RARE_STEP = 25;                 // 以降この語数ごとに1隻（大和=650語）
+
   function defaults() {
     return {
       coins: 0, xp: 0,
@@ -94,8 +101,9 @@ const Rewards = (() => {
       sessionsDone: 0, flawless: 0,
       totalCorrect: 0, totalWrong: 0,
       wordCorrect: 0, idiomCorrect: 0,
-      ships: [],                   // 配属済み軍艦ID（FLEET順）
+      ships: [],                   // 配属済み軍艦ID
       shipLastAward: null,         // 最後に艦を配属した日（1日1隻制限）
+      lv3Mastered: [],             // Lv3クリア済みの項目ID（レア艦解放の原資）
       history: [],                 // {date, correct, wrong, done}
     };
   }
@@ -127,15 +135,67 @@ const Rewards = (() => {
     return 1;
   }
 
-  // 次の配属艦（全部集まっていたらnull）
-  function nextShip(p) {
-    if (p.ships.length >= FLEET.length) return null;
-    return FLEET[p.ships.length];
+  // 次の通常艦（駆逐/軽巡/重巡）。全て配属済みならnull
+  function nextRegularShip(p) {
+    for (let i = 0; i < REGULAR_COUNT; i++) {
+      if (!p.ships.includes(FLEET[i].id)) return FLEET[i];
+    }
+    return null;
   }
 
-  // 艦を1隻配属（戻り値: 配属した艦 or null）
+  // 次の未配属レア艦（潜水/空母/戦艦）。全て配属済みならnull
+  function nextUnownedRare(p) {
+    for (let i = REGULAR_COUNT; i < FLEET.length; i++) {
+      if (!p.ships.includes(FLEET[i].id)) return FLEET[i];
+    }
+    return null;
+  }
+
+  // Lv3クリア累計n語で解放されるべきレア艦の数
+  function entitledRares(masteredCount) {
+    if (masteredCount < RARE_FIRST) return 0;
+    return Math.min(FLEET.length - REGULAR_COUNT, Math.floor((masteredCount - RARE_FIRST) / RARE_STEP) + 1);
+  }
+
+  // レア艦の解放条件語数（FLEET配列インデックス≥REGULAR_COUNT用）
+  function rareThreshold(fleetIdx) {
+    return RARE_FIRST + (fleetIdx - REGULAR_COUNT) * RARE_STEP;
+  }
+
+  // 次のレア艦解放に必要な語数。全て解放済みならnull
+  function nextRareThreshold(p) {
+    const nr = nextUnownedRare(p);
+    if (!nr) return null;
+    return rareThreshold(FLEET.indexOf(nr));
+  }
+
+  // 解放条件を満たしたレア艦を一括配属。戻り値=新規配属艦の配列
+  function awardEarnedRares(p) {
+    const entitled = entitledRares(p.lv3Mastered.length);
+    const unlocked = [];
+    for (let r = 0; r < entitled; r++) {
+      const ship = FLEET[REGULAR_COUNT + r];
+      if (!p.ships.includes(ship.id)) {
+        p.ships.push(ship.id);
+        unlocked.push(ship);
+      }
+    }
+    if (unlocked.length) save(p);
+    return unlocked;
+  }
+
+  // Lv3クリア記録（重複なし）。戻り値=解放されたレア艦の配列
+  function recordLv3Clear(p, id) {
+    if (p.lv3Mastered.includes(id)) return [];
+    p.lv3Mastered.push(id);
+    const unlocked = awardEarnedRares(p);
+    save(p);
+    return unlocked;
+  }
+
+  // 艦を1隻配属（通常艦優先・枯渇後はレア艦）。戻り値: 配属した艦 or null
   function awardShip(p) {
-    const ship = nextShip(p);
+    const ship = nextRegularShip(p) || nextUnownedRare(p);
     if (!ship) return null;
     p.ships.push(ship.id);
     save(p);
@@ -180,11 +240,15 @@ const Rewards = (() => {
     return ev;
   }
 
-  function onAnswer(p, isCorrect, kind) {
+  // Lv別報酬: Lv1=10枚 Lv2=15枚 Lv3=20枚（×ストリーク倍率）
+  const LV_COINS = [0, 10, 15, 20];
+  const LV_XP = [0, 3, 4, 6];
+
+  function onAnswer(p, isCorrect, kind, lv = 1) {
     if (isCorrect) {
       p.totalCorrect++;
-      p.coins += 10 * multiplier(p.streak);
-      p.xp += 5;
+      p.coins += LV_COINS[lv] * multiplier(p.streak);
+      p.xp += LV_XP[lv];
       if (kind === "idiom") p.idiomCorrect++;
       else p.wordCorrect++;
     } else {
@@ -206,10 +270,14 @@ const Rewards = (() => {
     if (p.history.length > 60) p.history.shift();
     let awarded = null;
     if (p.shipLastAward !== today) {
-      awarded = awardShip(p);
-      if (awarded) p.shipLastAward = today;
+      // 完走配属は通常艦（駆逐/軽巡/重巡）のみ。レア艦はLv3クリア専用
+      awarded = nextRegularShip(p);
+      if (awarded) {
+        p.ships.push(awarded.id);
+        p.shipLastAward = today;
+        save(p);
+      }
     }
-    save(p);
     return awarded;
   }
 
@@ -218,7 +286,9 @@ const Rewards = (() => {
   return {
     load, save, defaults, rankOf, nextRank, multiplier,
     touchStudy, onAnswer, onSessionDone, flush,
-    nextShip, awardShip,
+    awardShip, recordLv3Clear, awardEarnedRares,
+    nextRareThreshold, entitledRares,
+    REGULAR_COUNT, RARE_FIRST, RARE_STEP,
     RANKS, FLEET,
   };
 })();

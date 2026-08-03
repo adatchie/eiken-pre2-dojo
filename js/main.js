@@ -5,6 +5,7 @@
   const NEW_PER_DAY = 20;
   const MAX_PER_DAY = 60;
   const TIME_LIMIT = 20; // 秒
+  const LV_NAMES = { 1: "Lv1 書き写し", 2: "Lv2 一部表示", 3: "Lv3 本番" };
 
   let WORDS = [];   // {id,en,ja,kind:"word"}
   let IDIOMS = [];  // {id,en,ja,ex,cat,tier,kind:"idiom"}
@@ -104,20 +105,35 @@
   }
 
   // ---------- 出題 ----------
+  function currentLv(id) {
+    return mode === "test" ? 3 : SRS.lvOf(SRS.all(), id);
+  }
+
   function renderQuestion() {
     const id = Session.current(sess);
     if (!id) { finishSession(); return; }
     phase = "answering";
     const it = BY_ID[id];
-    $("q-kind").textContent = it.kind === "idiom" ? `熟語 ${it.tier ? "【でる度" + it.tier + "】" : ""}` : "単語";
+    const lv = currentLv(id);
+    $("q-kind").innerHTML = escapeHtml(it.kind === "idiom" ? `熟語 ${it.tier ? "【でる度" + it.tier + "】" : ""}` : "単語") +
+      ` <span class="lv-badge lv${lv}">${LV_NAMES[lv]}</span>`;
     $("q-meaning").textContent = it.ja;
+    // Lv1書き写し: 正解をそのまま表示
+    const tr = $("q-transcript");
+    if (lv === 1) {
+      tr.textContent = U.expandVariants(it.en)[0];
+      tr.style.display = "";
+    } else {
+      tr.textContent = "";
+      tr.style.display = "none";
+    }
     // 例文: 熟語は空所化
     if (it.kind === "idiom" && it.ex) {
       $("q-example").innerHTML = blankExample(it);
     } else {
       $("q-example").textContent = "";
     }
-    $("q-hint").textContent = hintFor(it);
+    $("q-hint").textContent = hintFor(it, lv);
     $("feedback").textContent = "";
     $("feedback").className = "feedback";
     const inp = $("answer-input");
@@ -143,11 +159,17 @@
     return html;
   }
 
-  function hintFor(it) {
-    const n = U.normalize(it.en);
+  function hintFor(it, lv) {
+    const n = U.normalize(U.expandVariants(it.en)[0]);
     const words = n.split(" ");
-    if (words.length === 1) return `ヒント: ${words[0][0]}${"_".repeat(Math.max(0, words[0].length - 1))}（${words[0].length}文字）`;
-    return `ヒント: ${words.length}語`;
+    if (lv === 1) return "上の英語をそのまま入力しよう！";
+    if (lv === 2) {
+      // 各単語の頭文字だけ表示
+      const masked = words.map((w) => w[0] + "_".repeat(Math.max(0, w.length - 1))).join(" ");
+      return `ヒント: ${masked}`;
+    }
+    // Lv3: 単語数＋文字数のみ
+    return `ヒント: ${words.length}語 ／ ${words.map((w) => w.length).join("+")}文字`;
   }
 
   function updateProgress() {
@@ -185,10 +207,11 @@
   function handleTimeout() {
     if (phase !== "answering") return;
     const id = Session.current(sess);
+    const lv = currentLv(id);
     stopTimer();
     combo = 0;
     sess = Session.answer(sess, id, false, { timeout: true });
-    Rewards.onAnswer(profile, false, BY_ID[id].kind);
+    Rewards.onAnswer(profile, false, BY_ID[id].kind, lv);
     Rewards.flush(profile);
     const it = BY_ID[id];
     const fb = $("feedback");
@@ -206,14 +229,25 @@
     if (!val.trim()) return;
     const id = Session.current(sess);
     const it = BY_ID[id];
+    const lv = currentLv(id);
     const ok = U.matchAnswer(val, it);
     stopTimer();
     sess = Session.answer(sess, id, ok, {});
-    Rewards.onAnswer(profile, ok, it.kind);
+    Rewards.onAnswer(profile, ok, it.kind, lv);
+    let unlocked = [];
+    if (ok && lv === 3 && mode === "daily") {
+      unlocked = Rewards.recordLv3Clear(profile, id);
+    }
     const fb = $("feedback");
     if (ok) {
       combo++;
-      fb.innerHTML = `⭕ 正解！ ${combo >= 3 ? "🔥" + combo + "コンボ！" : ""}`;
+      let msg = `⭕ 正解！ ${combo >= 3 ? "🔥" + combo + "コンボ！" : ""}`;
+      if (mode === "daily" && lv < 3) msg += `<br><span style="font-size:.85rem">⬆️ ${LV_NAMES[lv + 1]} に昇格！</span>`;
+      if (mode === "daily" && lv === 3) msg += `<br><span style="font-size:.85rem;color:#64748b">Lv3クリア！（累計${profile.lv3Mastered.length}語）</span>`;
+      if (unlocked.length) {
+        msg += unlocked.map((s) => `<br><b>🔓 レア艦解放！ ${s.type}「${s.name}」</b>`).join("");
+      }
+      fb.innerHTML = msg;
       fb.className = "feedback ok";
     } else {
       combo = 0;
@@ -316,7 +350,7 @@
         intro.innerHTML = "まだ弱点データがありません。<br>まず日々の修行で問題を解こう！";
         $("btn-test-start").style.display = "none";
       } else {
-        intro.innerHTML = `苦手な問題から <b>${ids.length}問</b> 出題します。<br>制限時間あり・再出題なしの本番形式です。`;
+        intro.innerHTML = `苦手な問題から <b>${ids.length}問</b> 出題します。<br>全問 <b>Lv3 本番形式</b>（単語数＋文字数のみ）・制限時間あり・再出題なしです。`;
         $("btn-test-start").style.display = "";
       }
     }
@@ -348,8 +382,9 @@
       正解 ${sum.correct}問 ／ ミス ${sum.wrong}問 ／ 連続学習 ${sum.streak}日<br><br>
       <b>【進度】</b><br>
       導入済み: ${introduced}語 ／ 定着(4回以上連続正解): ${mastered}語<br>
+      Lv3クリア（本番難易度で正解）: <b>${profile.lv3Mastered.length}語</b><br>
       ランク: ${rank.name} ／ XP: ${profile.xp} ／ コイン: ${profile.coins}<br>
-      配属済み軍艦: ${profile.ships.length}隻 ／ ${Rewards.FLEET.length}隻`;
+      配属済み軍艦: ${profile.ships.length}隻 ／ ${Rewards.FLEET.length}隻（レア解放まで: ${Rewards.nextRareThreshold(profile) ? Rewards.nextRareThreshold(profile) - profile.lv3Mastered.length + "語" : "全解放"}）`;
     if (profile.history.length) {
       html += `<br><br><b>【履歴（最新10件）】</b><table class="report-table"><tr><th>日付</th><th>正解</th><th>ミス</th><th>完走</th></tr>`;
       profile.history.slice(-10).reverse().forEach((h) => {
@@ -364,9 +399,12 @@
   // ---------- 軍艦図鑑 ----------
   function openCards() {
     profile = Rewards.load();
-    const ownedIdx = new Set(profile.ships.map((id) => Rewards.FLEET.findIndex((s) => s.id === id)));
+    const owned = new Set(profile.ships);
     const grid = $("cards-grid");
-    let html = `<div class="fleet-summary">配属進捗 <b>${profile.ships.length}</b> ／ ${Rewards.FLEET.length}隻</div>`;
+    const mastered = profile.lv3Mastered.length;
+    const nextThr = Rewards.nextRareThreshold(profile);
+    let html = `<div class="fleet-summary">配属進捗 <b>${profile.ships.length}</b> ／ ${Rewards.FLEET.length}隻<br>
+      <span style="font-size:.85rem">Lv3クリア累計: <b>${mastered}語</b>${nextThr ? `（次のレア艦は${nextThr}語で解放）` : "（レア艦すべて解放済み）"}</span></div>`;
     const byType = {};
     Rewards.FLEET.forEach((ship, idx) => {
       (byType[ship.type] = byType[ship.type] || []).push({ ship, idx });
@@ -374,14 +412,19 @@
     for (const type of ["駆逐艦", "軽巡洋艦", "重巡洋艦", "潜水艦", "空母", "戦艦"]) {
       const list = byType[type];
       if (!list) continue;
-      const ownedInType = list.filter((x) => ownedIdx.has(x.idx)).length;
-      html += `<div class="fleet-type">${type}（${ownedInType}/${list.length}）</div>`;
+      const ownedInType = list.filter((x) => owned.has(x.ship.id)).length;
+      const isRare = list[0].idx >= Rewards.REGULAR_COUNT;
+      html += `<div class="fleet-type">${isRare ? "⭐ " : ""}${type}（${ownedInType}/${list.length}）${isRare ? "<span class='rare-tag'>レア</span>" : ""}</div>`;
       html += list.map(({ ship, idx }) => {
-        const owned = ownedIdx.has(idx);
-        return `<div class="card-item ${owned ? "" : "locked"}">
-          <div class="icon">${owned ? "⚓" : "🌊"}</div>
-          <div class="name">${owned ? ship.name : "？？？"}</div>
-          <div class="desc">${owned ? ship.note : "未配属"}</div>
+        const has = owned.has(ship.id);
+        const desc = has ? ship.note
+          : (idx >= Rewards.REGULAR_COUNT
+            ? `Lv3クリア${Rewards.RARE_FIRST + (idx - Rewards.REGULAR_COUNT) * Rewards.RARE_STEP}語で解放`
+            : "セッション完走で配属");
+        return `<div class="card-item ${has ? "" : "locked"} ${idx >= Rewards.REGULAR_COUNT ? "rare" : ""}">
+          <div class="icon">${has ? "⚓" : "🌊"}</div>
+          <div class="name">${has ? ship.name : "？？？"}</div>
+          <div class="desc">${desc}</div>
         </div>`;
       }).join("");
     }

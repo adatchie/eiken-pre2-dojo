@@ -80,6 +80,9 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   const q1Meaning = $("q-meaning").textContent;
   check("問題表示（種別）", q1Kind.includes("単語") || q1Kind.includes("熟語"));
   check("問題表示（意味あり）", q1Meaning.length > 0);
+  check("Lvバッジ表示（新規はLv1）", q1Kind.includes("Lv1"));
+  check("Lv1書き写し表示", $("q-transcript").style.display !== "none" && $("q-transcript").textContent.length > 0);
+  check("Lv1ヒント表示", $("q-hint").textContent.includes("そのまま入力"));
   check("タイマー表示", /^\d+$/.test($("timer").textContent));
   check("進捗表示", /\d+\/\d+/.test($("progress-mini").textContent));
 
@@ -155,6 +158,8 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   await sleep(100);
   check("軍艦図鑑へ", $("screen-cards").style.display !== "none");
   check("軍艦60隻表示", window.document.querySelectorAll(".card-item").length === 60);
+  check("レア艦タグ表示", $("cards-grid").textContent.includes("レア"));
+  check("レア解放条件表示", $("cards-grid").textContent.includes("Lv3クリア"));
 
   // --- モーダル（OKで閉じる） ---
   $("btn-cards-back").click();

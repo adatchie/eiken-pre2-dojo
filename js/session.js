@@ -42,9 +42,10 @@ const Session = (() => {
 
   // isCorrect=false → queue再投入（テストモード以外）。revealed → ミス2回カウント。
   function answer(s, id, isCorrect, opts = {}) {
+    const srsOpts = s.test ? { noLv: true } : {};  // テストはLv変動なし
     if (isCorrect) {
       s.correct++;
-      SRS.onCorrect(id);
+      SRS.onCorrect(id, srsOpts);
     } else {
       s.wrong += opts.revealed ? 2 : 1;
       if (opts.revealed) s.revealed++;
@@ -54,7 +55,7 @@ const Session = (() => {
         s.queue.push(id);
         if (opts.revealed) s.queue.push(id);
       }
-      SRS.onWrong(id);
+      SRS.onWrong(id, srsOpts);
     }
     s.answeredIds.push(id);
     s.pos++;

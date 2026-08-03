@@ -81,6 +81,29 @@ SRS.onWrong("w1");
 const map3 = SRS.all();
 check("SRS 不正解→stage0 due=+1日", map3.w1.stage === 0 && map3.w1.due === U.addDays(today, 1));
 
+// --- SRS: Lv制 ---
+Store.set("review_v1", {});
+SRS.introduceMany(["lv1"]);
+check("Lv初期値=1", SRS.lvOf(SRS.all(), "lv1") === 1);
+SRS.onCorrect("lv1");
+check("正解→Lv2に昇格", SRS.lvOf(SRS.all(), "lv1") === 2);
+SRS.onCorrect("lv1");
+check("再度正解→Lv3", SRS.lvOf(SRS.all(), "lv1") === 3);
+SRS.onCorrect("lv1");
+check("Lv3が上限", SRS.lvOf(SRS.all(), "lv1") === 3);
+SRS.onWrong("lv1");
+check("不正解→Lv2に降格", SRS.lvOf(SRS.all(), "lv1") === 2);
+SRS.onWrong("lv1");
+SRS.onWrong("lv1");
+SRS.onWrong("lv1");
+check("Lvは1未満にならない", SRS.lvOf(SRS.all(), "lv1") === 1);
+SRS.introduceMany(["lvtest"]);
+SRS.onCorrect("lvtest", { noLv: true });
+check("noLv: 正解でもLv1のまま（テストモード）", SRS.lvOf(SRS.all(), "lvtest") === 1);
+SRS.onWrong("lvtest", { noLv: true });
+check("noLv: 不正解でもLv1のまま", SRS.lvOf(SRS.all(), "lvtest") === 1);
+check("未導入項目のLv=1", SRS.lvOf(SRS.all(), "unknown_item") === 1);
+
 // --- Session: 逃げ場ゼロ ---
 const ids = ["a", "b", "c"];
 const sess = Session.create(ids, "test-seed");
@@ -164,6 +187,40 @@ check("配属済み艦が記録される", p2.ships.includes(Rewards.FLEET[0].id
 check("無傷ボーナスでflawless=1", p2.flawless === 1);
 const ship2 = Rewards.onSessionDone(p2, statsDone, today);
 check("同日2回目の完走では配属なし（1日1隻）", ship2 === null && p2.ships.length === 1);
+
+// --- Lv別コイン報酬 ---
+Store.set("stats_v1", Rewards.defaults());
+const plv = Rewards.load();
+plv.streak = 1;
+const c0 = plv.coins;
+Rewards.onAnswer(plv, true, "word", 1);
+Rewards.onAnswer(plv, true, "word", 2);
+Rewards.onAnswer(plv, true, "word", 3);
+check("Lv別コイン 10+15+20=45", plv.coins === c0 + 45);
+
+// --- レア艦解放（Lv3クリア累計） ---
+Store.set("stats_v1", Rewards.defaults());
+const pr = Rewards.load();
+for (let i = 0; i < Rewards.RARE_FIRST - 1; i++) Rewards.recordLv3Clear(pr, "m" + i);
+check("24語クリアではレア艦なし", pr.ships.length === 0);
+Rewards.recordLv3Clear(pr, "m24");
+check("25語クリアで伊400解放", pr.ships.includes("ss01"));
+Rewards.recordLv3Clear(pr, "m24");
+check("重複記録はカウントされない", pr.lv3Mastered.length === 25 && pr.ships.length === 1);
+check("次の解放閾値=50語", Rewards.nextRareThreshold(pr) === 50);
+for (let i = 25; i < 650; i++) Rewards.recordLv3Clear(pr, "m" + i);
+check("650語クリアでレア艦26隻すべて解放", pr.ships.filter((id) => Rewards.FLEET.slice(34).some((s) => s.id === id)).length === 26);
+check("大和も解放済み", pr.ships.includes("bb10"));
+check("全解放後は次の閾値null", Rewards.nextRareThreshold(pr) === null);
+
+// --- 完走配属は通常艦のみ（34隻枯渇後は配属なし） ---
+Store.set("stats_v1", Rewards.defaults());
+const pr2 = Rewards.load();
+for (let d = 0; d < 34; d++) Rewards.onSessionDone(pr2, statsDone, U.addDays(today, d));
+check("34日完走で通常艦34隻", pr2.ships.length === 34);
+check("完走ではレア艦は出ない", !pr2.ships.includes("ss01"));
+const award35 = Rewards.onSessionDone(pr2, statsDone, U.addDays(today, 34));
+check("通常艦枯渇後は完走でも配属なし", award35 === null);
 
 // --- Report ---
 const summary = Report.summary(p2);
