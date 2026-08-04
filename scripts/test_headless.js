@@ -75,6 +75,22 @@ check("findInText バリアント対応 (just in case)", f6 && f6.exact && f6.sp
 check("matchAnswer went out は拒否（辞書形のみ受理）", !U.matchAnswer("went out", { en: "go out" }));
 check("matchAnswer go out は受理", U.matchAnswer("go out", { en: "go out" }));
 
+// --- A/Bプレースホルダー熟語: 大文字でも小文字でも正解（理不尽回避） ---
+const tA = { en: "bring A to life" };
+check("A熟語: 大文字Aで正解", U.matchAnswer("bring A to life", tA));
+check("A熟語: 小文字aでも正解", U.matchAnswer("bring a to life", tA));
+check("A熟語: 全て大文字でも正解", U.matchAnswer("BRING A TO LIFE", tA));
+const tAB = { en: "introduce A to B" };
+check("AB熟語: 大文字ABで正解", U.matchAnswer("introduce A to B", tAB));
+check("AB熟語: 小文字abでも正解", U.matchAnswer("introduce a to b", tAB));
+// --- displayForm: ヒント用は大小文字を保持する ---
+check("displayForm A大文字保持", U.displayForm("bring A to life") === "bring A to life");
+check("displayForm AB大文字保持", U.displayForm("introduce A to B") === "introduce A to B");
+check("displayForm 小文字はそのまま", U.displayForm("go out") === "go out");
+check("displayForm 所有格統一", U.displayForm("make up MY mind") === "make up ones mind");
+check("displayForm 空白圧縮", U.displayForm("  bring   A  to life ") === "bring A to life");
+check("normalize は引き続き小文字化（判定用）", U.normalize("bring A to life") === "bring a to life");
+
 // 日付seededShuffleの再現性
 const arr = [1,2,3,4,5,6,7,8,9,10];
 const s1 = U.seededShuffle(arr, "2026-08-03");

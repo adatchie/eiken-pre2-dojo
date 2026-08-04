@@ -57,6 +57,17 @@ const U = (() => {
     return t;
   }
 
+  // 表示用正規化: normalizeと同じ処理だが大文字小文字は保持する
+  // （ヒント表示用 — "bring A to life" の A を小文字化しない）
+  function displayForm(s) {
+    let t = String(s == null ? "" : s).trim();
+    t = t.replace(POSSESSIVES, "one's");
+    t = t.replace(/[^a-zA-Z0-9' ]/g, " ");
+    t = t.replace(/'/g, "");
+    t = t.replace(/\s+/g, " ").trim();
+    return t;
+  }
+
   function collapse(s) {
     return String(s == null ? "" : s).replace(/\s+/g, " ").trim();
   }
@@ -127,6 +138,6 @@ const U = (() => {
 
   return {
     dateStr, todayStr, addDays, hashStr, mulberry32, seededShuffle,
-    normalize, collapse, expandVariants, acceptedSet, matchAnswer, findInText,
+    normalize, displayForm, collapse, expandVariants, acceptedSet, matchAnswer, findInText,
   };
 })();

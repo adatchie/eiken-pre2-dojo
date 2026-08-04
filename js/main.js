@@ -156,7 +156,7 @@
   }
 
   function hintFor(it, lv) {
-    const n = U.normalize(U.expandVariants(it.en)[0]);
+    const n = U.displayForm(U.expandVariants(it.en)[0]);
     const words = n.split(" ");
     if (lv === 1) {
       // 一部表示: 各単語の頭文字だけ表示（意味→綴りの想起を必ず起こす）
