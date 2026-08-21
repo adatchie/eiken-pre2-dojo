@@ -28,6 +28,8 @@ const Session = (() => {
   function load() {
     const s = Store.get(KEY, null);
     if (!s || s.date !== U.todayStr() || s.test) return null;
+    // 当日完走済みセッションは再開対象外（0/0バグ: done残骸から壊れた画面に復帰するのを防ぐ）
+    if (s.done || !Array.isArray(s.queue) || s.pos >= s.queue.length) return null;
     return s;
   }
 

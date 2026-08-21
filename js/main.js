@@ -93,6 +93,8 @@
   }
 
   function enterSession() {
+    // セッション無効（当日完走後の残骸など）はホームへ戻す（0/0バグ対策）
+    if (!sess || Session.isDone(sess)) { renderHome(); return; }
     show("session");
     combo = 0;
     updateTopbar();
