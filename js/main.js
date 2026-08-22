@@ -72,9 +72,17 @@
     return fresh.concat(dueIds);
   }
 
+  // 0/0バグ対策: 保存セッションのqueue内idが現データに存在するか検証
+  // (データ更新で消えたidが残ると renderQuestion が undefined.kind でクラッシュ → 0/0入力不能)
+  function sessionHealthy(s) {
+    if (!s) return false;
+    return s.queue.every((id) => BY_ID[id]);
+  }
+
   function startDaily() {
     mode = "daily";
     let s = Session.load();
+    if (s && !sessionHealthy(s)) s = null;  // 毒セッションは破棄して新規生成
     if (!s) {
       const ids = buildDailyQueue();
       if (!ids.length) { showModal("今日は復習待ちの問題がありません。<br>明日また来よう！"); return; }
@@ -93,8 +101,8 @@
   }
 
   function enterSession() {
-    // セッション無効（当日完走後の残骸など）はホームへ戻す（0/0バグ対策）
-    if (!sess || Session.isDone(sess)) { renderHome(); return; }
+    // セッション無効（当日完走後の残骸・毒queue）はホームへ戻す（0/0バグ対策）
+    if (!sess || Session.isDone(sess) || !sessionHealthy(sess)) { renderHome(); return; }
     show("session");
     combo = 0;
     updateTopbar();
@@ -494,7 +502,8 @@
   function renderHome() {
     profile = Rewards.load();
     updateTopbar();
-    const s = Session.load();
+    let s = Session.load();
+    if (s && !sessionHealthy(s)) s = null;  // 毒セッションは「進行中」表示しない
     const status = $("today-status");
     const btnStart = $("btn-start");
     const btnResume = $("btn-resume");
@@ -543,7 +552,7 @@
   // ---------- 初期化 ----------
   function bind() {
     $("btn-start").onclick = startDaily;
-    $("btn-resume").onclick = () => { mode = "daily"; sess = Session.load(); profile = Rewards.load(); enterSession(); };
+    $("btn-resume").onclick = () => { mode = "daily"; sess = Session.load(); profile = Rewards.load(); if (!sessionHealthy(sess)) sess = null; if (!sess) { renderHome(); return; } enterSession(); };
     $("btn-test").onclick = openTest;
     $("btn-test-start").onclick = startTest;
     $("btn-test-back").onclick = renderHome;
