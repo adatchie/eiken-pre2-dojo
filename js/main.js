@@ -106,12 +106,10 @@
     show("session");
     combo = 0;
     updateTopbar();
-    // リロード復帰: 制限時間超過チェック
-    if (sess.deadline && Date.now() > sess.deadline) {
-      handleTimeout();
-    } else {
-      renderQuestion();
-    }
+    // 0/0バグ根本修正: 期限切れdeadlineの再開で handleTimeout が phase ガードに
+    // 拦まれて何も描画されず初期HTML(0/0)のまま凍結する問題。
+    // 常に renderQuestion し、期限切れは startTimer→tickTimer が処理する。
+    renderQuestion();
   }
 
   // ---------- 出題 ----------
