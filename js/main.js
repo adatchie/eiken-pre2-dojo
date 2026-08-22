@@ -590,6 +590,17 @@
     loadShipManifest();  // 画像カード用（非同期・失敗しても動作継続）
     bind();
     renderHome();
+    // グローバルエラーバナー: JSクラッシュが画面を黙殺しないように（0/0バグの遠隔診断用）
+    window.addEventListener("error", (e) => {
+      const el = document.getElementById("err-banner") || (() => {
+        const d = document.createElement("div");
+        d.id = "err-banner";
+        d.style.cssText = "position:fixed;bottom:0;left:0;right:0;background:#b91c1c;color:#fff;font-size:.75rem;padding:6px 10px;z-index:9999";
+        document.body.appendChild(d);
+        return d;
+      })();
+      el.textContent = "⚠ エラー: " + (e.message || "不明") + " — 再読み込みしてください";
+    });
   }
 
   init();
